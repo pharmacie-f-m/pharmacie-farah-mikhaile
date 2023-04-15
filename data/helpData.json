@@ -3,18 +3,18 @@
     {
       "id": 1,
       "contentId": "content-1",
-      "heading": "ဆေးတွေ ဘယ်လိုရှာမလဲ",
-      "img": "/illustrations/HelpPlaceholder.svg",
+      "heading": "How to find drugs?",
+      "img": "/illustrations/HelpPlaceholder.jpg",
       "instructions": [
         {
           "id": "1",
-          "step": "အဆင့်(၁)",
-          "text": "<img src='/icons/mobile-menu.svg' width='29' height='24' alt='mobile-menu-icon' /> 👈ကိုနှိပ်ပြီး ဆေးမျိုးစုံကို နှိပ်ပေးပါ။"
+          "step": "Step 1",
+          "text": "<img src='/icons/mobile-menu.svg' width='29' height='24' alt='mobile-menu-icon' /> Click on 👈 and click on various medicines"
         },
         {
           "id": "2",
-          "step": "အဆင့်(၂)",
-          "text": "ပုံတွင်ပြထားသော နေရာတွင် ဆေးအမည်ရေးလိုက်ပါ။ ပြီးရင် ရှာမယ် ကိုနှိပ်ပေးပါက သက်ဆိုင်သောဆေးများ ပြပေးပါလိမ့်မယ်။<br /> နောက်တစ်နည်းအနေဖြင့် “စစ်ထုတ်မယ်” ဆိုတာကို နှိပ်ပေးပါ။ အဲ့ထဲမှာ ရောဂါအလိုက် စုပေးထားသော ဆေးများထဲမှ ကိုယ်လိုချင်သည်ကို ရွေးပြီးစစ်ထုတ်နိုင်သလို ဆေးရဲ့ အစ အင်္ဂလိပ်အက္ခရာနှင့်လည်း ရွေးပြီး စစ်ထုတ်နိုင်ပါတယ်။"
+          "step": "Step 2",
+          "text": "Write the medicine name in the space shown in the picture. After that, if you click on Search, it will show you the corresponding drugs.<br /> Another way is to click on \"Filter\". In that, you can select and filter the drugs you want from the drugs grouped according to the disease, or you can also filter by selecting and filtering by the beginning of the drug."
         }
       ]
     },
@@ -22,23 +22,23 @@
     {
       "id": 2,
       "contentId": "content-2",
-      "heading": "လိုချင်တဲ့ဆေးကုန်နေရင် ဘာလုပ်လို့ရမလဲ။",
-      "img": "/illustrations/HelpPlaceholder.svg",
+      "heading": "What can I do if I run out of the medicine I want?",
+      "img": "/illustrations/HelpPlaceholder.jpg",
       "instructions": [
         {
           "id": "1",
-          "step": "အဆင့်(၁)",
-          "text": "ကိုယ်လိုချင်တဲ့ဆေးအကြောင်းရေးထားသော စာမျက်နှာကို သွားပေးပါ။ လိုချင်တဲ့ ဆေးရှာနည်းကို အပေါ်မှာဖတ်နိုင်ပါတယ်။"
+          "step": "Step 1",
+          "text": "Go to the page about the medicine you want. You can read above how to find the medicine you want."
         },
         {
           "id": "2",
-          "step": "အဆင့်(၂)",
-          "text": "ပမာဏနေရာတွင် “ပစ္စည်း ကုန်နေပါတယ်” လို့ပြနေရင် အောက်က “အနီးစပ်ဆုံးဆေးနဲ့ နှိုင်းယှဉ်မယ်” ဆိုတာကို နှိပ်ပေးပါ။<br /> နှိပ်လိုက်ရင် ပစ္စည်း ကုန်နေတဲ့ ဆေးနဲ့ အာနိသင်၊ ပါဝင်ပစ္စည်းများ အတူဆုံး ဆိုင်မှာရှိတဲ့ ဆေးကိုပြပေးမှာဖြစ်ပါတယ်။"
+          "step": "Step 2",
+          "text": "If it shows \"out of stock\" in the quantity area, please click on \"compare with the closest drug\" below.<br /> We will show you the medicine in the shop with the ingredients."
         },
         {
           "id": "3",
-          "step": "အဆင့်(၃)",
-          "text": "ပြပေးတဲ့ ဆေးက အဆင်ပြေလို့ ဆေးအကြောင်းသေချာသိချင်တယ်ဆိုရင် “ကြည့်ကြည့်မယ်” ဆိုတာကို နှိပ်လိုက်ရင် ပြထားတဲ့ ဆေးအကြောင်းကို ရေးထားတဲ့ စာမျက်နှာကိုရောက်သွားမှာဖြစ်ပါတယ်။"
+          "step": "Step 3",
+          "text": "If you want to know for sure about the medicine, if you click on \"Look\" and you will go to the page written about the medicine."
         }
       ]
     },
@@ -46,33 +46,33 @@
     {
       "id": 3,
       "contentId": "content-3",
-      "heading": "ဆေးဝယ်စာရင်းကို ဘယ်လိုသုံးမလဲ။",
-      "img": "/illustrations/HelpPlaceholder.svg",
+      "heading": "How to use the medicine shopping list?",
+      "img": "/illustrations/HelpPlaceholder.jpg",
       "instructions": [
         {
           "id": "1",
-          "step": "အဆင့်(၁)",
-          "text": "ကိုယ်လိုချင်တဲ့ဆေးအကြောင်းရေးထားသော စာမျက်နှာကို သွားပေးပါ။ လိုချင်တဲ့ ဆေးရှာနည်းကို အပေါ်မှာဖတ်နိုင်ပါတယ်။"
+          "step": "Step 1",
+          "text": "Go to the page about the medicine you want. You can read above how to find the medicine you want."
         },
         {
           "id": "2",
-          "step": "အဆင့်(၂)",
-          "text": "“ပမာဏ” ဆိုသော နေရာတွင် ကိုယ်လိုသလောက် ပမာဏ ကို “+” နှင့်တိုး (သို့) “-” နှင့် လျှော့ပြီး ကိုယ်လိုချင်သလောက် ပမာဏ ကိုရွေးပေးပါ။"
+          "step": "Step 2",
+          "text": "In the \"amount\" field, increase the amount with \"+\" or decrease with \"-\" and select the amount you want."
         },
         {
           "id": "3",
-          "step": "အဆင့်(၃)",
-          "text": "ပြီးရင် “ဆေးဝယ်စာရင်းထည့်မယ်” ကိုနှိပ်ပေးပါ။ <br />နှိပ်ပြီးပါက “<img src='/icons/cart.svg' width='29' height='24' alt='mobile-menu-icon' />” ကိုနှိပ်ပေးပါ။ ဆေးဝယ်စာရင်းပေါ်လာပါမယ်။ အဲ့မှာ ကိုယ်ထည့်ထားတဲ့ ဆေးရဲ့ အမည်၊ ပမာဏနဲ့ ဈေးနှုန်းများကို တွေ့ရပါမယ်။ စိတ်ပြောင်းသွားလို့ ပမာဏကိုပြောင်းချင်တယ်ဆိုရင် “+” နဲ့ တိုးပြီး “-” နဲ့ လျှော့လို့ရပါတယ်။ "
+          "step": "Step 3",
+          "text": "If so, please click on \"add medicine shopping list\". <br />After clicking “<img src='/icons/cart.svg' width='29' height='24' alt='mobile-menu-icon' />” Click on A drug shopping list will appear. The name of the medicine I added You will see the quantity and price. If you change your mind and want to change the amount, you can increase it with \"+\" and decrease it with \"-\"."
         },
         {
           "id": "4",
-          "step": "အဆင့်(၄)",
-          "text": "ထည့်ထားသော ဆေးတစ်မျိုးကို ဆေးဝယ်စာရင်းထဲကနေ ဖြုတ်ချင်တယ်ဆိုရင် ပမာဏ ကို သုညထိရောက်အောင်လျှော့ပေးပါ။ ပြီးရင် ဈေးနှုန်းကနေ “<img src='/icons/trash.svg' width='29' height='24' alt='mobile-menu-icon' />” ကိုပြောင်းသွားပါလိမ့်မယ်။ “<img src='/icons/trash.svg' width='29' height='24' alt='mobile-menu-icon' />”ကို နှိပ်လိုက်ပါက စာရင်းထည့်ကနေ ထုတ်သွားမှာဖြစ်ပါတယ်။"
+          "step": "Step 4",
+          "text": "If you want to remove an added drug from the list, reduce the amount to zero. Then the price will change to 0. Or, 'Click to remove from the list.'"
         },
         {
           "id": "5",
-          "step": "အဆင့်(၅)",
-          "text": "ဆေးဝယ်စာရင်းထဲကို ဆေးအသစ်ထပ်ထည့်ချင်တယ်ဆိုရင် “<img src='/icons/arrow-left.svg' width='15' height='15' alt='mobile-menu-icon' />” ကိုနှိပ်လိုက်ပါ။ ပြီးရင် အပေါ်က အဆင့် (၁)၊ (၂)၊ (၃) အတိုင်းပြန်လုပ်ပါက စာရင်းထဲကို ဆေးအသစ်တစ်ခုရောက်လာမှာဖြစ်ပါတယ်။"
+          "step": "Step 5",
+          "text": "If you want to add a new drug to the drug shopping list “<img src='/icons/arrow-left.svg' width='15' height='15' alt='mobile-menu-icon' />” Click on Then step (1) above, (2), (3) If you do it again, a new drug will be added to the list."
         }
       ]
     },
@@ -80,28 +80,28 @@
     {
       "id": 4,
       "contentId": "content-4",
-      "heading": "အော်ဒါဘယ်လိုတင်မလဲ။",
-      "img": "/illustrations/HelpPlaceholder.svg",
+      "heading": "How to place an order?",
+      "img": "/illustrations/HelpPlaceholder.jpg",
       "instructions": [
         {
           "id": "1",
-          "step": "အဆင့်(၁)",
-          "text": "ဆေးဝယ်စာရင်းကိုသွားပေးပါ။ ကိုယ်လိုချင်တဲ့ ဆေးရှာနည်းနဲ့ ဆေးဝယ်စာရင်းအသုံးပြုနည်းများကို အပေါ်မှာဖတ်ပေးပါ။"
+          "step": "Step 1",
+          "text": "Go to the shopping list. Read above how to find the medicine you want and how to use the medicine shopping list."
         },
         {
           "id": "2",
-          "step": "အဆင့်(၂)",
-          "text": "ဆေးဝယ်စာရင်းထဲမှာ ကိုယ်လိုချင်တဲ့ ဆေးများစုံပြီဆိုရင် “ဆက်လုပ်ဆောင်မယ်”ကိုနှိပ်ပေးပါ။<br />“ဆိုင်လာယူမယ်” နဲ့ “အိမ်အရောက်ပို့ပေးပါ” နှစ်မျိုးထဲမှ ကြိုက်နှစ်သက်ရာကိုရွေးပေးပါ။"
+          "step": "Step 2",
+          "text": "If you have all the medicines you want in the medicine shopping list, please click \"Continue\"."
         },
         {
           "id": "3",
-          "step": "အဆင့်(၃)",
-          "text": "“ဆိုင်လာယူမယ်” ကိုရွေးထားရင် “အမည်” နှင့် “ဖုန်းနံပါတ်” တို့ကို ဖြည့်ပေးပါ။ “စုစုပေါင်း ကျသင့်ငွေ” ကိုစစ်ပေးပါ။<br />“ငွေသားနဲ့ပေးချေမယ်” နဲ့ “ K pay နဲ့ပေးချေမယ်” ထဲမှ ကြိုက်နှစ်သက်ရာကိုရွေးပေးပါ။ “ငွေသားနဲ့ ပေးချေမယ်” ကိုရွေးထားပါက ဆိုင်ရောက်မှ ငွေသားနဲ့ ပေးချေရမှာဖြစ်ပါတယ်။ “K pay နဲ့ ပေးချေမယ်” ကိုရွေးထားပါက ဖော်ပြထားသော အကောင့်ကို ငွေလွှဲပေးပြီး ငွေလွှဲဖြတ်ပိုင်းကို “ပုံတင်မယ်” ဆိုတာကိုနှိပ်ပြီး တစ်ခါတည်း ထည့်သွင်းပေးရမှာဖြစ်ပါတယ်။ ပြီးရင် ဆိုင်တွင် နာမည်ပြောပြပြီး ဆေးများထုတ်ယူနိုင်ပါတယ်။"
+          "step": "Step 3",
+          "text": "If you select \"Pick up\", fill in \"Name\" and \"Phone Number\". Check the \"Total Charges\".<br />Choose between \"Pay with Cash\" and \"Pay with Bizum\". If you select \"Pay in cash\", you will have to pay in cash when you arrive at the store. If you select \"Pay with Bizum\", transfer the money to the specified account and enter the transfer receipt once by clicking \"Upload\". Then tell the name at the shop and take out the medicine."
         },
         {
           "id": "4",
-          "step": "အဆင့်(၄)",
-          "text": "“အိမ်အရောက်ပို့ပေးပါ” ကိုရွေးထားရင် “အမည်”၊ “ဖုန်းနံပါတ်” နှင့် “နေရပ်လိပ်စာ” တို့ကိုဖြည့်ပေးပါ။ “အိမ်ရောက်ပို့ခ” နှင့် “ စုစုပေါင်း ကျသင့်ငွေ” များကိုစစ်ပေးပါ။<br /><br />“ငွေသားနဲ့ပေးချေမယ်” နဲ့ “ K pay နဲ့ပေးချေမယ်” ထဲမှ ကြိုက်နှစ်သက်ရာကိုရွေးပေးပါ။ “ငွေသားနဲ့ ပေးချေမယ်” ကိုရွေးထားပါက ဆေးတွေမှာယူထားသော နေရာကိုရောက်မှာ ငွေသားနဲ့ ပေးချေရမှာဖြစ်ပါတယ် ။ “K pay နဲ့ ပေးချေမယ်” ကိုရွေးထားပါက ဖော်ပြထားသော အကောင့်ကို ငွေလွှဲပေးပြီး ငွေလွှဲဖြတ်ပိုင်းကို “ပုံတင်မယ်” ဆိုတာကိုနှိပ်ပြီး တစ်ခါတည်း ထည့်သွင်းပေးရမှာဖြစ်ပါတယ်။ ပြီးရင် မှာယူထားသောဆေးများကို တစ်ရက်အတွင်းပို့ဆောင်ပေးမှာဖြစ်ပါတယ်။"
+          "step": "Step 4",
+          "text": "If you select \"Home Delivery\", \"Name\", Please fill in \"Phone Number\" and \"Home Address\". Check \"Home Delivery\" and \"Total Charges\".<br /><br />Select your favorite from \"Cash\" and \"Bizum\". If you select \"Pay with cash\", you will have to pay with cash when you arrive at the place where you took the medicine. If you select \"Pay with Bizum\", transfer the money to the specified account and enter the transfer receipt once by clicking \"Upload\". Then the ordered drugs will be delivered within a day."
         }
       ]
     }

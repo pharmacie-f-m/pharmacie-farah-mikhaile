@@ -25,7 +25,7 @@ const { bannerpillData } = require('@/ksh-data/bannerpillData.json')
 
 const Banner = () => {
   const [dropdownState, setDropdownState] = useState(false)
-  const [dropdownText, setDropdownText] = useState('နေမကောင်းဖြစ်')
+  const [dropdownText, setDropdownText] = useState('Pharmacie')
 
   const HoverHandler = e => {
     setDropdownText(e)
@@ -43,7 +43,7 @@ const Banner = () => {
   useEffect(() => {
     //to throw back to default text of dropdown
     if (dropdownState == false) {
-      setDropdownText('နေမကောင်းဖြစ်')
+      setDropdownText('Symptoms')
     }
   }, [dropdownState])
 
@@ -60,7 +60,7 @@ const Banner = () => {
               />
             </svg>
           </Dropdown>
-          <FixedText>နေတယ်</FixedText>
+          <FixedText></FixedText>
         </ClickAble>
 
         <AnimatePresence>
@@ -101,7 +101,7 @@ const Banner = () => {
                 ))}
               </PillWrapper>
               <Link href='/categories/all' passHref>
-                <ViewAll>ဆေးအားလုံးကြည့်မယ်</ViewAll>
+                <ViewAll>View Drugs</ViewAll>
               </Link>
             </DropdownData>
           )}

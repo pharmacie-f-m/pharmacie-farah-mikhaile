@@ -26,7 +26,7 @@ export default function ProductDetailsPage({
   if (isInjected) {
     return (
       <Error
-        message="URLကို မကလိပါနဲ့လား ကိုငြိမ်းမောင်"
+        message="URL"
         status="Error : tgg pan pr dl, plz."
       />
     );
@@ -36,7 +36,7 @@ export default function ProductDetailsPage({
       <Head>
         <title>
           {" "}
-          {medicine_info.product_name_eng} - Kyaw San Htoo - Pharmacy in Pathein
+          {medicine_info.product_name_eng} - Pharmacie - Pharmacy in Spain
         </title>
       </Head>
       <AnimatePresence>
@@ -57,7 +57,7 @@ export default function ProductDetailsPage({
 
       {relatedMedicines.length > 0 ? (
         <GlobalContainer style={{ marginTop: "-2.25em" }}>
-          <ProductCard.Heading>ဆက်စပ် ဆေးဝါးများ</ProductCard.Heading>
+          <ProductCard.Heading>Related Drugs</ProductCard.Heading>
           <ProductCard.Frame>
             {relatedMedicines.map((medicine) => (
               <ProductCard key={medicine.id} medicine={medicine} />
@@ -65,7 +65,7 @@ export default function ProductDetailsPage({
           </ProductCard.Frame>
         </GlobalContainer>
       ) : (
-        <Empty message="စပ်ဆက်ဆေးဝါးများ မရှိသေးပါ။" />
+        <Empty message="No drugs yet" />
       )}
     </>
   );
@@ -74,20 +74,25 @@ export default function ProductDetailsPage({
 export async function getStaticPaths() {
   const resp = await fetch(`${API_URL}/medicines`);
   const medicines = await resp.json();
-  const paths = medicines.map((medicine) => {
-    return {
-      params: {
-        category: medicine.categories[0].slug,
-        productName: medicine.slug,
-      },
-    };
-  });
+  const paths = medicines.reduce((acc, medicine) => {
+    if (medicine.categories.length > 0) {
+      const path = {
+        params: {
+          category: medicine.categories[0].slug,
+          productName: medicine.slug,
+        },
+      };
+      acc.push(path);
+    }
+    return acc;
+  }, []);
 
   return {
     paths,
     fallback: "blocking",
   };
 }
+
 
 export async function getStaticProps({ params: { productName, category } }) {
   const resp = await fetch(`${API_URL}/medicines?slug=${productName}`);

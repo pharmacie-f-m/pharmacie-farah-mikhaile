@@ -151,11 +151,11 @@ export const Amount = styled.p`
   text-align: center;
 `
 
-export const KPayWrapper = styled.div`
+export const BizumWrapper = styled.div`
   margin: 20px 0px;
   padding: 0px 17px;
 `
-export const KPayDescription = styled.p`
+export const BizumDescription = styled.p`
   font-size: 15px;
 `
 

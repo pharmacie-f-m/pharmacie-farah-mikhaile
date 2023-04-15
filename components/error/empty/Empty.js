@@ -12,7 +12,7 @@ export default function Empty({ message, children }) {
         {children}
         <Button onClick={() => router.back()}>
           <Chevron direction='left' />
-          နောက်သို့
+          Back
         </Button>
       </Frame>
     </GlobalContainer>

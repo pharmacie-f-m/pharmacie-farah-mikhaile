@@ -14,21 +14,21 @@ export default function handler(req, res) {
     })
 
     let mailData = {
-      from: 'kshpharmacy.order@gmail.com',
-      to: 'kyawsanhtoopharmacy@gmail.com',
-      subject: `KyawSanHtoo Website: An Order Received from ${req.body.name}`,
+      from: 'farahabuatiyeh@gmail.com',
+      to: 'fabuatiyeh.ieu2020@student.ie.edu@gmail.com',
+      subject: `Pharmacie Website: An Order Received from ${req.body.name}`,
       text: 'Sent by: ' + req.body.name,
       html: getEmailTemplate(req.body),
     }
 
-    if (req.body.kpay_screenshot) {
+    if (req.body.Bizum_screenshot) {
       mailData = {
         ...mailData,
         attachments: [
           {
-            filename: `${req.body.name}'s Kpay Screenshot'`,
-            path: `${req.body.kpay_screenshot}`,
-            cid: 'kpay_screenshot',
+            filename: `${req.body.name}'s Bizum Screenshot'`,
+            path: `${req.body.Bizum_screenshot}`,
+            cid: 'Bizum_screenshot',
           },
         ],
       }

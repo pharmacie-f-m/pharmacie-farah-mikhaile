@@ -14,78 +14,95 @@ export default function AllMedicinePage({ medicines, count, category, longCat })
   const { showOrderSuccessPopup, setShowOrderSuccessPopup } = useContext(CartStates)
 
   return (
-    <>
-      <Head>
-        <title>Categories - Kyaw San Htoo - Pharmacy in Pathein</title>
-      </Head>
-      <AnimatePresence>{showOrderSuccessPopup && <OrderSuccessPopup />}</AnimatePresence>
+      <>
+        <Head>
+          <title>Categories - Pharmacie - Pharmacy in Spain</title>
+        </Head>
+        <AnimatePresence>{showOrderSuccessPopup && <OrderSuccessPopup />}</AnimatePresence>
 
-      <GlobalContainer padding='6.25em 7.81em 4.4em 7.81em'>
-        <SearchBar.Container>
-          <SearchBar />
-          <ProductFilter longCat={longCat} routerCat={router.query.category} />
-        </SearchBar.Container>
+        <GlobalContainer padding='6.25em 7.81em 4.4em 7.81em'>
+          <SearchBar.Container>
+            <SearchBar />
+            <ProductFilter longCat={longCat} routerCat={router.query.category} />
+          </SearchBar.Container>
 
-        <ProductCard.InfoBar>
-          <ProductCard.CategoryName>{category}</ProductCard.CategoryName>
-          <ProductCard.Count>
-            ရလဒ်ပေါင်း <span className='mm-number'>{changeMyanNum(count)}</span>
-          </ProductCard.Count>
-        </ProductCard.InfoBar>
-      </GlobalContainer>
-      {medicines.length > 0 ? (
-        <ProductCardContainer medicines={medicines} />
-      ) : (
-        <Empty message={`${category} မရှိသေးပါ။`} />
-      )}
-    </>
+          <ProductCard.InfoBar>
+            <ProductCard.CategoryName>{category}</ProductCard.CategoryName>
+            <ProductCard.Count>
+              ရလဒ်ပေါင်း <span className='mm-number'>{changeMyanNum(count)}</span>
+            </ProductCard.Count>
+          </ProductCard.InfoBar>
+        </GlobalContainer>
+        {medicines && medicines.length > 0 ? (
+            <ProductCardContainer medicines={medicines} />
+        ) : (
+            <Empty message={`${category} မရှိသေးပါ။`} />
+        )}
+      </>
   )
 }
 
 export async function getStaticPaths() {
-  const resp = await fetch(`${API_URL}/categories`)
-  const categories = await resp.json()
-  const paths = categories.map(category => {
+  try {
+    const resp = await fetch(`${API_URL}/categories`);
+    const categories = await resp.json();
+    const paths = categories.map((category) => {
+      return {
+        params: {
+          category: category.slug,
+        },
+      };
+    });
     return {
-      params: {
-        category: category.slug,
-      },
-    }
-  })
-
-  return {
-    paths,
-    fallback: 'blocking',
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.error('Error while fetching categories data:', error);
+    return {
+      paths: [],
+      fallback: false,
+    };
   }
 }
 
+
+
 export async function getStaticProps({ params: { category } }) {
-  const REQUESTS = [
-    fetch(`${API_URL}/medicines?categories.slug_contains=${category}`),
-    fetch(`${API_URL}/categories?slug=${category}`),
-    fetch(`${API_URL}/categories`),
-  ]
-  const [medicinesResp, singleCategoryResp, respCat] = await Promise.all(REQUESTS)
-  const categoryData = await medicinesResp.json()
-  const singleCategory = await singleCategoryResp.json()
-  const longCat = await respCat.json()
 
-  const isCategoryInCMS = longCat.some(cat => cat.slug === category)
+  try {
+    const REQUESTS = [
+      fetch(`${API_URL}/medicines?categories.slug_contains=${category}`),
+      fetch(`${API_URL}/categories?slug=${category}`),
+      fetch(`${API_URL}/categories`),
+    ]
+    const [medicinesResp, singleCategoryResp, respCat] = await Promise.all(REQUESTS)
+    const categoryData = await medicinesResp.json()
+    const singleCategory = await singleCategoryResp.json()
+    const longCat = await respCat.json()
 
-  if (!isCategoryInCMS) {
+    const isCategoryInCMS = longCat.some(cat => cat.slug === category)
+
+    if (!isCategoryInCMS) {
+      return {
+        notFound: true,
+      }
+    }
+
+    return {
+      props: {
+        medicines: categoryData,
+        count: categoryData.length,
+        // I dont know why this check for singleCategory[0] is needed, but to fix the error in console :((
+        category: singleCategory[0] ? singleCategory[0].category_name:'',
+        longCat,
+      },
+      revalidate: 60,
+    }
+  } catch (error) {
+    console.error('Error while fetching category "${category}" data:', error)
     return {
       notFound: true,
     }
-  }
-
-  return {
-    props: {
-      medicines: categoryData,
-      count: categoryData.length,
-      // I dont know why this check for singleCategory[0] is needed, but to fix the error in console :((
-      category: singleCategory[0] ? singleCategory[0].category_name_long : null,
-      longCat: longCat,
-    },
-    revalidate: 5,
   }
 }

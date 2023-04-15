@@ -5,7 +5,7 @@ function BannerContainer() {
       <Banner.Section>
         <Banner.Content>
           <Banner.Title>
-            သင်ဘယ်လို <br /> ခံစားနေရပါသလဲ{' '}
+            How are you feeling today? {' '}
           </Banner.Title>
           <Banner />
         </Banner.Content>

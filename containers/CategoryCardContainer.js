@@ -49,7 +49,7 @@ export default function CategoryCardContainer({ categories }) {
   return (
     <CategoryCard.Section>
       <GlobalContainer>
-        <CategoryCard.Heading>မရှိမဖြစ် ဆေးဝါးနှင့် ဆေးပစ္စည်းများ</CategoryCard.Heading>
+        <CategoryCard.Heading>Essential medicines and medical supplies</CategoryCard.Heading>
         <CategoryCard.Frame>
           <Slider {...settings}>
             {categories.map(category => (

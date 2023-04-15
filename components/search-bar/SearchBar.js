@@ -15,12 +15,12 @@ export default function SearchBar() {
         onClick={e => {
           e.preventDefault()
           if (keyword === '') {
-            toast.error('တစ်ခုခုရေးဦးလေ အချောလေး😘')
+            toast.error('Enter something')
           } else {
             router.push(`/search?keyword=${keyword}`)
           }
         }}>
-        <span>ရှာမယ်</span>
+        <span>Search</span>
       </Button>
     </Form>
   )

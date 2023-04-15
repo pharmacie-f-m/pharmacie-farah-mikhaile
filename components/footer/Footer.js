@@ -20,20 +20,20 @@ export default function Footer() {
         <GroupWrapper>
           <Group>
             <InfoText>
-              ကျော်စံထူး ဆေးဆိုင်တွင် ဆေးမျိုးစုံကို
-              <br /> လက်လီ လက်ကား ဝယ်ယူရရှိနိုင်ပါပြီ
+              A variety of medicines at Pharmacie
+              <br /> Available for retail and wholesale purchase
             </InfoText>
           </Group>
           <Group mt='-0.4em 0 0 0'>
             <InfoText large>
-              <a href='tel:04224747'>၀၄၂ ၂၄၇၄၇</a>၊ <a href='tel:095021252'>၀၉ ၅၀၂၁ ၂၅၂</a>
+              <a href='tel:1234567'>1234567</a>၊ <a href='tel:123456789'>123456789</a>
             </InfoText>
-            <InfoText>အမှတ် ကျူ/ဘီ၊ ပုသိမ်ဆေးရုံကြီးရှေ့၊ ပုသိမ်မြို့။</InfoText>
+            <InfoText>Paseo De Castellana 259E</InfoText>
           </Group>
           <Group>
-            <InfoText>info@kyawsanhtoopharmacy.com</InfoText>
+            <InfoText>info@pharmacie.com</InfoText>
             <SocialIconWrapper>
-              <SocialIcon href='https://www.facebook.com/kyawsanhtoopharmacy' target='_blank'>
+              <SocialIcon href='https://www.facebook.com/pharmacie' target='_blank'>
                 <Image src='/icons/facebook.svg' width='18' height='18' alt='facebook-icon' />
               </SocialIcon>
               {/* <SocialIcon href='https://google.com' target='_blank'>
@@ -49,38 +49,38 @@ export default function Footer() {
           <Group>
             <Link href='/' passHref>
               <Logo>
-                <Image src='/logos/kyaw-san-htoo-logo-landscape.svg' layout='fill' alt='kyaw-san-htoo-logo' />
+                <Image src='/logos/pharmacie-logo.png' layout='fill' alt='pharmacie-logo' />
               </Logo>
             </Link>
           </Group>
           <Group>
-            <InfoText small>ကျော်စံထူး မူပိုင်ခွင့်/ {changeMyanNum(new Date().getFullYear())}ခုနှစ် </InfoText>
+            <InfoText small>Pharmacie copyright/ {changeMyanNum(new Date().getFullYear())} </InfoText>
           </Group>
           <Group>
             <InfoText small>
               Designed & Developed by{' '}
               <a
-                href='https://www.linkedin.com/in/aung-pyae-kyaw-2346aa16b/'
+                href='https://www.linkedin.com/in/farah-abuatiyeh-3b6a911b7/'
                 style={{ textDecoration: 'underline' }}
                 target='_blank'
                 rel='noreferrer'>
-                Aung Pyae
+                Farah Abuatiyeh
               </a>{' '}
               |{' '}
               <a
-                href='https://www.linkedin.com/in/yanaunghein/'
+                href='https://www.linkedin.com/in/mikhaile-collins/'
                 style={{ textDecoration: 'underline' }}
                 target='_blank'
                 rel='noreferrer'>
-                Yaung
+                Mikhaile Collins
               </a>{' '}
               |{' '}
               <a
-                href='https://www.linkedin.com/in/ye-min-htun-464622175/'
+                href='https://www.linkedin.com/pharmacie'
                 style={{ textDecoration: 'underline' }}
                 target='_blank'
                 rel='noreferrer'>
-                Yè Min
+                Pharmacie Linkedin
               </a>
             </InfoText>
           </Group>

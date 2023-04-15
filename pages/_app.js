@@ -44,19 +44,19 @@ function MyKSHApp({ Component, pageProps }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title>Pharmacie - Pharmacy in Spain</title>
         <meta
           name="description"
-          content="The very first online pharmacy based in Pathein"
+          content="Online Pharmacy in Madrid"
         />
         <link rel="shortcut icon" type="image/svg" href="/favicon.svg" />
         <meta
           property="og:title"
-          content="Kyaw San Htoo - The very first online pharmacy in Pathein"
+          content="Pharmacie"
         />
         <meta
           property="og:description"
-          content="သင့်အတွက်လိုအပ်သောဆေးဝါးများကို စျေးနှုန်းသက်သာစွာဖြင့် ကိုယ်တိုင် လာရောက်ဝယ်ယူနိုင်သလို ဒီ website မှလဲ order တင်နိုင်ပါတယ်"
+          content="You can visit and buy the medicines you need at a low price, or you can place an order from this website"
         />
         <meta
           property="og:image"

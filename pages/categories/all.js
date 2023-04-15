@@ -45,7 +45,7 @@ export default function AllMedicinePage({
   return (
     <>
       <Head>
-        <title>All - Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title>All - Pharmacie - Pharmacy in Spain</title>
       </Head>
       <AnimatePresence>
         {showOrderSuccessPopup && <OrderSuccessPopup />}
@@ -59,7 +59,7 @@ export default function AllMedicinePage({
         <ProductCard.InfoBar>
           <ProductCard.CategoryName>{category}</ProductCard.CategoryName>
           <ProductCard.Count>
-            ရလဒ်ပေါင်း{" "}
+            All Results:{" "}
             <span className="mm-number">{changeMyanNum(totalCount)}</span>
           </ProductCard.Count>
         </ProductCard.InfoBar>
@@ -84,10 +84,10 @@ export default function AllMedicinePage({
           >
             {loading ? (
               <>
-                ခဏစောင့်ပါ <LoadingSpinner />
+                Just a moment <LoadingSpinner />
               </>
             ) : (
-              "ဆေးတွေထပ်ပြပါ"
+              "Show more drugs"
             )}
           </Button.OffWhite>
         </div>
@@ -97,24 +97,34 @@ export default function AllMedicinePage({
 }
 
 export async function getStaticProps() {
-  const resp = await fetch(
-    `${API_URL}/medicines?_sort=published_at:DESC&_start=0&_limit=4`
-  );
-  const medicines = await resp.json();
+  try {
+    const resp = await fetch(`${API_URL}/medicines?_sort=published_at:DESC&_start=0&_limit=4`);
+    const medicines = await resp.json();
 
-  const respCat = await fetch(`${API_URL}/categories`);
-  const longCat = await respCat.json();
+    const respCat = await fetch(`${API_URL}/categories`);
+    const longCat = await respCat.json();
 
-  const totalCountResp = await fetch(`${API_URL}/medicines/count`);
-  const totalCount = await totalCountResp.json();
+    const totalCountResp = await fetch(`${API_URL}/medicines/count`);
+    const totalCount = await totalCountResp.json();
 
-  return {
-    props: {
-      medicines,
-      category: "ဆေးအားလုံး",
-      longCat: longCat,
-      totalCount,
-    },
-    // revalidate: 5,
-  };
+    return {
+      props: {
+        medicines,
+        category: "All drugs",
+        longCat: longCat,
+        totalCount,
+      },
+      // revalidate: 5,
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {
+        medicines: [],
+        category: "All drugs",
+        longCat: [],
+        totalCount: 0,
+      },
+    };
+  }
 }

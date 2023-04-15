@@ -24,7 +24,7 @@ export default function Counter({ setAmount, amount, medicine }) {
         <Image src='/icons/minus-blue.svg' alt='minus-icon' width={12} height={2} />
       </Button>
       <Amount>
-        <span className='mm-number'>{changeMyanNum(amount)}</span> <span>{medicine.product_unit || 'ကဒ်'}</span>
+        <span className='mm-number'>{changeMyanNum(amount)}</span> <span>{medicine.product_unit || 'Card'}</span>
       </Amount>
       <Button
         onClick={() => {
@@ -41,7 +41,7 @@ export default function Counter({ setAmount, amount, medicine }) {
           {parse(
             `${product_name_mm} <span className='mm-number'>${changeMyanNum(
               product_quantity
-            )}</span> ${product_unit} သာကျန်ပါတော့တယ်`
+            )}</span> ${product_unit} Only left`
           )}
         </Error>
       )}

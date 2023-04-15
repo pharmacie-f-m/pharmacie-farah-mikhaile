@@ -48,7 +48,7 @@ export default function TestimonialContainer({ testimonials }) {
   return (
     <TestimonialCard.Section>
       <GlobalContainer>
-        <TestimonialCard.Heading>ဝယ်သူတို့ရဲ့ စကားသံများ</TestimonialCard.Heading>
+        <TestimonialCard.Heading>What customers have said:</TestimonialCard.Heading>
         <TestimonialCard.Frame>
           
           {/* <Swiper

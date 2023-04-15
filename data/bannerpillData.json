@@ -2,32 +2,32 @@
   "bannerpillData": [
     {
       "id": 1,
-      "issues": "နှာစီး",
+      "issues": "Runny nose",
       "path": "/categories/runny-nose"
     },
     {
       "id": 2,
-      "issues": "ခေါင်းကိုက်",
+      "issues": "Migraine",
       "path": "/categories/migraine"
     },
     {
       "id": 3,
-      "issues": "ဆီးချိုတက်/ကျ",
+      "issues": "Diabetes",
       "path": "/categories/diabetes"
     },
     {
       "id": 4,
-      "issues": "သွေးတိုး/သွေးကျ",
+      "issues": "Hypertension",
       "path": "/categories/hypertension"
     },
     {
       "id": 5,
-      "issues": "ဗိုက်အောင့်",
+      "issues": "Stomach ache",
       "path": "/categories/stomach-ache"
     },
     {
       "id": 6,
-      "issues": "စိတ်ကျ",
+      "issues": "Depression",
       "path": "/categories/depression"
     }
   ]

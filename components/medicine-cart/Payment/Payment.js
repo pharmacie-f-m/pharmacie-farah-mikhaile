@@ -14,8 +14,8 @@ import {
   CostdescriptionWrapper,
   CostText,
   Amount,
-  KPayWrapper,
-  KPayDescription,
+  BizumWrapper,
+  BizumDescription,
   AccountWrapper,
   HeadingWrapper,
   AccountHeading,
@@ -55,14 +55,14 @@ const LoadingSpinner = styled(ImSpinner9)`
 
 export default function Payment({ prePage, orderFormData, setOrderFormData, medicineToBuy }) {
   const { name, phone, address, delivery_method, payment_method } = orderFormData
-  const [base64KpayImage, setBase64KpayImage] = useState(null)
+  const [base64BizumImage, setBase64BizumImage] = useState(null)
   const [_, setCartVisible] = useContext(CartStates).visibility
   const { setShowOrderSuccessPopup, dispatch } = useContext(CartStates)
   const [orderOnTheProcess, setOrderOnTheProcess] = useState(false)
 
   useEffect(() => {
-    if (payment_method === 'ငွေသားနဲ့ ပေးချေမယ်') {
-      setBase64KpayImage(null)
+    if (payment_method === 'Pay in Cash') {
+      setBase64BizumImage(null)
     }
   }, [payment_method])
 
@@ -73,11 +73,11 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
     })
   }
 
-  const generateAndSetBase64KpayImage = image => {
+  const generateAndSetBase64BizumImage = image => {
     const reader = new FileReader()
     reader.readAsDataURL(image)
     reader.onloadend = () => {
-      setBase64KpayImage(reader.result)
+      setBase64BizumImage(reader.result)
     }
   }
 
@@ -95,7 +95,7 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
     const orderData = {
       ...orderFormData,
       medicines: FilterEmptyProduct,
-      kpay_screenshot: base64KpayImage,
+      Bizum_screenshot: base64BizumImage,
     }
 
     const resp = await fetch('/api/order', {
@@ -141,42 +141,42 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
               fill='white'
             />
           </svg>
-          <PaymentTitle>အော်ဒါတင်ရန်</PaymentTitle>
+          <PaymentTitle>Place an Order</PaymentTitle>
         </PaymentHeading>
 
-        <MethodDescription>ဆိုင်လာယူမလား။ အိမ်ရောက်ပို့ပေးရမလား။</MethodDescription>
+        <MethodDescription>Do you want to buy it? Can I have it delivered to my home?</MethodDescription>
         <MethodWrapper>
           <MethodPills>
             <input
               type='radio'
               name='delivery_method'
-              id='ဆိုင်လာယူမယ်'
-              value='ဆိုင်လာယူမယ်'
-              checked={delivery_method === 'ဆိုင်လာယူမယ်'}
+              id='Take it to store'
+              value='Take it to store'
+              checked={delivery_method === 'Take it to store'}
               onChange={handleOrderFormDataChange}
             />
-            <label htmlFor='ဆိုင်လာယူမယ်'>ဆိုင်လာယူမယ်</label>
+            <label htmlFor='Take it to store'>Take it to store</label>
           </MethodPills>
           <MethodPills>
             <input
               type='radio'
               name='delivery_method'
-              id='အိမ်အရောက်ပို့ပေးပါ'
-              value='အိမ်အရောက်ပို့ပေးပါ'
-              checked={delivery_method === 'အိမ်အရောက်ပို့ပေးပါ'}
+              id='Home delivery'
+              value='Home delivery'
+              checked={delivery_method === 'Home delivery'}
               onChange={handleOrderFormDataChange}
             />
-            <label htmlFor='အိမ်အရောက်ပို့ပေးပါ'>အိမ်အရောက်ပို့ပေးပါ</label>
+            <label htmlFor='Home delivery'>Home delivery</label>
           </MethodPills>
         </MethodWrapper>
 
         <PaymentInputWrapper>
           <FormGroup>
-            <Label htmlFor='name'>နာမည်</Label>
+            <Label htmlFor='name'>First Name</Label>
             <FormInput type='text' name='name' id='name' value={name} onChange={handleOrderFormDataChange} required />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor='phone'>ဖုန်းနံပါတ်</Label>
+            <Label htmlFor='phone'>Phone Number</Label>
             <FormInput
               type='text'
               name='phone'
@@ -188,9 +188,9 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
               title='Please enter your 11 digit phone number starting with 09'
             />
           </FormGroup>
-          {orderFormData.delivery_method === 'အိမ်အရောက်ပို့ပေးပါ' ? (
+          {orderFormData.delivery_method === 'Home delivery' ? (
             <FormGroup>
-              <Label htmlFor='address'>နေရပ်လိပ်စာ</Label>
+              <Label htmlFor='address'>Home address</Label>
               <FormInput
                 type='text'
                 name='address'
@@ -206,20 +206,20 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
         </PaymentInputWrapper>
 
         <SummaryWrapper>
-          <SummaryHeading>ကုန်ကျငွေများ</SummaryHeading>
-          {orderFormData.delivery_method === 'အိမ်အရောက်ပို့ပေးပါ' ? (
+          <SummaryHeading>Cost</SummaryHeading>
+          {orderFormData.delivery_method === 'Home delivery' ? (
             <CostdescriptionWrapper>
-              <CostText>အိမ်အရောက်ပို့ခ (ကျပ်)</CostText>
-              <Amount>၁၅၀၀</Amount>
+              <CostText>Home delivery fee</CostText>
+              <Amount>5</Amount>
             </CostdescriptionWrapper>
           ) : (
             ''
           )}
 
           <CostdescriptionWrapper>
-            <CostText>စုစုပေါင်း ကျသင့်ငွေ (ကျပ်)</CostText>
+            <CostText>Total cost</CostText>
             <Amount>
-              {orderFormData.delivery_method === 'အိမ်အရောက်ပို့ပေးပါ'
+              {orderFormData.delivery_method === 'Home delivery'
                 ? changeMyanNum(GrandTotal)
                 : changeMyanNum(totalPrice)}
             </Amount>
@@ -227,57 +227,57 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
         </SummaryWrapper>
 
         <SummaryWrapper>
-          <SummaryHeading>ငွေဘယ်လိုပေးချေမလဲ။</SummaryHeading>
+          <SummaryHeading>How will you pay?</SummaryHeading>
         </SummaryWrapper>
         <MethodWrapper>
           <MethodPills>
             <input
               type='radio'
               name='payment_method'
-              id='ငွေသားနဲ့ ပေးချေမယ်'
-              value='ငွေသားနဲ့ ပေးချေမယ်'
-              checked={payment_method === 'ငွေသားနဲ့ ပေးချေမယ်'}
+              id='With interest'
+              value='With interest'
+              checked={payment_method === 'With interest'}
               onChange={handleOrderFormDataChange}
             />
-            <label htmlFor='ငွေသားနဲ့ ပေးချေမယ်'>ငွေသားနဲ့ ပေးချေမယ်</label>
+            <label htmlFor='With interest'>With interest</label>
           </MethodPills>
           <MethodPills>
             <input
               type='radio'
               name='payment_method'
-              id='KPay နဲ့ ပေးချေမယ်'
-              value='KPay နဲ့ ပေးချေမယ်'
-              checked={payment_method === 'KPay နဲ့ ပေးချေမယ်'}
+              id='Bizum'
+              value='Bizum'
+              checked={payment_method === 'Bizum'}
               onChange={handleOrderFormDataChange}
             />
-            <label htmlFor='KPay နဲ့ ပေးချေမယ်'>KPay နဲ့ ပေးချေမယ်</label>
+            <label htmlFor='Bizum'>Bizum</label>
           </MethodPills>
         </MethodWrapper>
 
-        {orderFormData.payment_method === 'KPay နဲ့ ပေးချေမယ်' ? (
-          <KPayWrapper>
-            <KPayDescription>အောက်ပါ အကောင့်များကို ငွေလွှဲနိုင်ပါတယ်။</KPayDescription>
+        {orderFormData.payment_method === 'Bizum' ? (
+          <BizumWrapper>
+            <BizumDescription>Bizum to this account</BizumDescription>
             <AccountWrapper>
               <HeadingWrapper>
-                <AccountHeading>အကောင့်အမည်</AccountHeading>
-                <AccountHeading>ဖုန်းနံပါတ်</AccountHeading>
+                <AccountHeading>Account name</AccountHeading>
+                <AccountHeading>Phone number</AccountHeading>
               </HeadingWrapper>
               <Line></Line>
               <AccountDetails>
-                <Name>မမ</Name> <Phone>၀၉ ၁၂၃၄ ၅၆၇၈၉</Phone>
-                <Name>ညီမလေး</Name> <Phone>၀၉ ၁၂၃၄ ၅၆၇၈၉</Phone>
+                <Name>Pharmacie</Name> <Phone>1234567</Phone>
+                <Name>Pharmacie</Name> <Phone>123456789</Phone>
               </AccountDetails>
             </AccountWrapper>
 
             <UploadWrapper>
-              <UploadDescripton>ငွေလွှဲဖြတ်ပိုင်း ထည့်သွင်းရန်</UploadDescripton>
+              <UploadDescripton>Upload Transfer Receipt</UploadDescripton>
               <UploadButtonWrapper>
-                {base64KpayImage && (
+                {base64BizumImage && (
                   <span>
-                    <Image src={base64KpayImage} alt='kpay-screenshot' layout='fill' />
+                    <Image src={base64BizumImage} alt='Bizum-screenshot' layout='fill' />
                   </span>
                 )}
-                <UploadButtonLabel htmlFor='Screenshot' active={Boolean(base64KpayImage)}>
+                <UploadButtonLabel htmlFor='Screenshot' active={Boolean(base64BizumImage)}>
                   ပုံတင်မယ်
                 </UploadButtonLabel>
                 <UploadButton
@@ -285,11 +285,11 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
                   id='Screenshot'
                   name='payment_screenshot'
                   onChange={e => {
-                    generateAndSetBase64KpayImage(e.target.files[0])
+                    generateAndSetBase64BizumImage(e.target.files[0])
                   }}></UploadButton>
               </UploadButtonWrapper>
             </UploadWrapper>
-          </KPayWrapper>
+          </BizumWrapper>
         ) : (
           ''
         )}
@@ -298,10 +298,10 @@ export default function Payment({ prePage, orderFormData, setOrderFormData, medi
           <Button Big>
             {orderOnTheProcess ? (
               <>
-                <span>အော်ဒါတင်နေပါတယ်။ </span> <LoadingSpinner />
+                <span>Ordering</span> <LoadingSpinner />
               </>
             ) : (
-              'အော်ဒါတင်မယ် '
+              'Place order '
             )}
           </Button>
         </ButtonWrapper>

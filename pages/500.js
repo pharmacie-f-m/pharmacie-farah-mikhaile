@@ -10,13 +10,13 @@ export default function ServerErrorPage() {
   return (
     <>
       <Head>
-        <title>404 - Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title>404 - Pharmacie - Pharmacy in Spain</title>
       </Head>
       <AnimatePresence>
         {showOrderSuccessPopup && <OrderSuccessPopup />}
       </AnimatePresence>
       <Error
-        message="ဆာဗာerror တတ်နေတယ် ကိုငြိမ်းမောင်"
+        message="Server Error"
         status="Error : 500 Internal Server Error"
       />
     </>

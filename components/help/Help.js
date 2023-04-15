@@ -57,7 +57,7 @@ export default function HelpPage() {
         <Helpwrapper>
           <LeftColumn>
             <Menu aria-label='Table of contents'>
-              <Menuheading>ဝပ်ဆိုက်ဒ် အသုံးပြုနည်း</Menuheading>
+              <Menuheading>How to use Website</Menuheading>
               <Menulist>
                 {HelpData.map(helpnav => (
                   <MenuItem key={helpnav.id}>

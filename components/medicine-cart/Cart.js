@@ -10,8 +10,8 @@ const orderFormInitialState = {
   name: '',
   phone: '',
   address: '',
-  delivery_method: 'ဆိုင်လာယူမယ်',
-  payment_method: 'ငွေသားနဲ့ ပေးချေမယ်',
+  delivery_method: 'From store',
+  payment_method: 'Pay in cash',
 }
 
 function Cart() {

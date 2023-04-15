@@ -9,7 +9,7 @@ export default function HelpPage() {
   return (
     <>
       <Head>
-        <title> Help - Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title> Help - Pharmacie</title>
       </Head>
       <AnimatePresence>
         {showOrderSuccessPopup && <OrderSuccessPopup />}

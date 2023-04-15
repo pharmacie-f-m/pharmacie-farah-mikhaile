@@ -10,13 +10,13 @@ export default function NotFoundPage() {
   return (
     <>
       <Head>
-        <title>404 - Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title>404 - Pharmacie - Pharmacy in Spain</title>
       </Head>
       <AnimatePresence>
         {showOrderSuccessPopup && <OrderSuccessPopup />}
       </AnimatePresence>
       <Error
-        message="ဒီပေ့ခ်ျ ကျွန်မတို့ဝက်ဘ်ဆိုက်မှာမရှိဘူး ကိုငြိမ်းမောင်"
+        message="This page is not on our website"
         status="Error : 404 Page Not Found"
       />
     </>

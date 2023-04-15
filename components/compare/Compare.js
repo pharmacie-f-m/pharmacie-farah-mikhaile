@@ -18,7 +18,7 @@ export default function Compare({ outstockMedicine, instockMedicine }) {
         <NameWrapper>
           <MyanmarName>{outstockMedicine.product_name_mm}</MyanmarName>
           <EnglishName as='h2'>{outstockMedicine.product_name_eng}</EnglishName>
-          <NoticePill availability={false}>ကုန်နေသော ဆေး</NoticePill>
+          <NoticePill availability={false}>Out of Stock Medicine</NoticePill>
         </NameWrapper>
         <ImageWrapper>
           <Image
@@ -38,7 +38,7 @@ export default function Compare({ outstockMedicine, instockMedicine }) {
         <NameWrapper>
           <MyanmarName>{instockMedicine.product_name_mm}</MyanmarName>
           <EnglishName>{instockMedicine.product_name_eng}</EnglishName>
-          <NoticePill availability={true}>အကြံပေးသော ဆေး</NoticePill>
+          <NoticePill availability={true}>Recommended Medicine</NoticePill>
         </NameWrapper>
         <ImageWrapper>
           <Image

@@ -41,7 +41,7 @@ export default function Navbar({ isMobileNavOpen, setIsMobileNavOpen }) {
       <Container as='nav' isScrolled={isScrolled}>
         <Group>
           {navLinks
-            .filter(link => link.text !== 'အသုံးပြုနည်းများ')
+            .filter(link => link.text !== 'How to use')
             .map(link => (
               <Link href={link.path} key={link.id} passHref>
                 <NavLink active={router.pathname === link.path}>{link.text}</NavLink>
@@ -52,7 +52,7 @@ export default function Navbar({ isMobileNavOpen, setIsMobileNavOpen }) {
         <Group>
           <Link href='/' passHref>
             <Logo isScrolled={isScrolled}>
-              <Image src='/logos/kyaw-san-htoo-logo-landscape.svg' layout='fill' alt='kyaw-san-htoo-logo' />
+              <Image src='/logos/pharmacie-logo.png' layout='fill' alt='pharmacie-logo' />
             </Logo>
           </Link>
         </Group>
@@ -62,7 +62,7 @@ export default function Navbar({ isMobileNavOpen, setIsMobileNavOpen }) {
             <Icon>
               <Image src='/icons/cart.svg' layout='fill' alt='cart-icon' />
             </Icon>
-            <span>ဆေးဝယ်စာရင်း</span>
+            <span>Cart</span>
             {itemsInCart[0].length > 0 && (
               <TotalCount>
                 <span className='mm-number'>{changeMyanNum(itemsInCart[0].length)}</span>
@@ -71,7 +71,7 @@ export default function Navbar({ isMobileNavOpen, setIsMobileNavOpen }) {
           </Button>
           <Link href='/help' passHref>
             <Icon>
-              <Image src='/icons/help.svg' layout='fill' alt='help-icon' title='အသုံးပြုနည်းများ' />
+              <Image src='/icons/help.svg' layout='fill' alt='help-icon' title='How to use' />
             </Icon>
           </Link>
         </Group>

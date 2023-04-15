@@ -16,55 +16,55 @@ export default function ProductDetailsInfoContainer({ medicine_details, medicine
       <ProductDetails medicine_info={medicine_info} />
       <Accordion>
         <Accordion.Item>
-          <Accordion.Title>ဆေးအကြောင်း အကျဉ်းချုပ်</Accordion.Title>
+          <Accordion.Title>A summary of the medicine</Accordion.Title>
           <Accordion.AnswerWrapper>
             <Accordion.Answer>
-              {description_rt ? parse(marked.parse(description_rt)) : <p>မကြာမှီ တင်ပေးထားပါမယ်ဗျ။</p>}
+              {description_rt ? parse(marked.parse(description_rt)) : <p> Will post it soon </p>}
             </Accordion.Answer>
           </Accordion.AnswerWrapper>
         </Accordion.Item>
 
         <Accordion.Item>
-          <Accordion.Title>ကောင်းကျိုးများ</Accordion.Title>
+          <Accordion.Title>Benefits</Accordion.Title>
           <Accordion.AnswerWrapper>
             <Accordion.Answer>
-              {benefits_rt ? parse(marked.parse(benefits_rt)) : <p>မကြာမှီ တင်ပေးထားပါမယ်ဗျ။</p>}
+              {benefits_rt ? parse(marked.parse(benefits_rt)) : <p>Will post it soon</p>}
             </Accordion.Answer>
           </Accordion.AnswerWrapper>
         </Accordion.Item>
 
         <Accordion.Item>
-          <Accordion.Title>ဘေးထွက်ဆိုးကျိုးများ</Accordion.Title>
+          <Accordion.Title>Side effects</Accordion.Title>
           <Accordion.AnswerWrapper>
             <Accordion.Answer>
-              {side_effects_rt ? parse(marked.parse(side_effects_rt)) : <p>မကြာမှီ တင်ပေးထားပါမယ်ဗျ။</p>}
+              {side_effects_rt ? parse(marked.parse(side_effects_rt)) : <p>Will post it soon</p>}
             </Accordion.Answer>
           </Accordion.AnswerWrapper>
         </Accordion.Item>
 
         <Accordion.Item>
-          <Accordion.Title>ဆရာဝန် အကြုံပြုချက်များ</Accordion.Title>
+          <Accordion.Title>Doctor recommendations</Accordion.Title>
           <Accordion.AnswerWrapper>
             <Accordion.Answer>
-              {doctor_suggestions_rt ? parse(marked.parse(doctor_suggestions_rt)) : <p>မကြာမှီ တင်ပေးထားပါမယ်ဗျ။</p>}
+              {doctor_suggestions_rt ? parse(marked.parse(doctor_suggestions_rt)) : <p>Will post it soon</p>}
             </Accordion.Answer>
           </Accordion.AnswerWrapper>
         </Accordion.Item>
 
         <Accordion.Item>
-          <Accordion.Title>သုံးစွဲနည်း</Accordion.Title>
+          <Accordion.Title>How to use it</Accordion.Title>
           <Accordion.AnswerWrapper>
             <Accordion.Answer>
-              {how_to_rt ? parse(marked.parse(how_to_rt)) : <p>မကြာမှီ တင်ပေးထားပါမယ်ဗျ။</p>}
+              {how_to_rt ? parse(marked.parse(how_to_rt)) : <p>Will post it soon</p>}
             </Accordion.Answer>
           </Accordion.AnswerWrapper>
         </Accordion.Item>
 
         <Accordion.Item>
-          <Accordion.Title>ဓာတ်မတည့်မှု သတိပေးချက်များ</Accordion.Title>
+          <Accordion.Title>Allergy warnings</Accordion.Title>
           <Accordion.AnswerWrapper>
             <Accordion.Answer>
-              {warnings_rt ? parse(marked.parse(warnings_rt)) : <p>မကြာမှီ တင်ပေးထားပါမယ်ဗျ။</p>}
+              {warnings_rt ? parse(marked.parse(warnings_rt)) : <p>Will post it soon</p>}
             </Accordion.Answer>
           </Accordion.AnswerWrapper>
         </Accordion.Item>

@@ -8,10 +8,10 @@ export default function CtaSection() {
     <Section>
       <GlobalContainer>
         <Content>
-          <Heading>ဆေးတွေ ကြည့် ကြည့်တော့မလား</Heading>
+          <Heading>Do you want to View Medicines?</Heading>
           <Link href='/categories/all' passHref>
             <Button.White>
-              <span>ကြည့် ကြည့်မယ်</span>
+              <span>View</span>
             </Button.White>
           </Link>
         </Content>

@@ -19,70 +19,69 @@ export default function AllMedicinePage({ medicines, keyword, longCat }) {
   const { showOrderSuccessPopup } = useContext(CartStates);
 
   return (
-    <>
-      <Head>
-        <title>
-          {" "}
-          {`"${keyword}" အတွက်ရှာဖွေမှူရလဒ်များ`} - Kyaw San Htoo - Pharmacy in
-          Pathein
-        </title>
-      </Head>
-      <AnimatePresence>
-        {showOrderSuccessPopup && <OrderSuccessPopup />}
-      </AnimatePresence>
+      <>
+        <Head>
+          <title>
+            {" "}
+            {`"${keyword}" Search results for `} - Pharmacie
+          </title>
+        </Head>
+        <AnimatePresence>
+          {showOrderSuccessPopup && <OrderSuccessPopup />}
+        </AnimatePresence>
 
-      <GlobalContainer padding="6.25em 7.81em 4.4em 7.81em">
-        <SearchBar.Container>
-          <SearchBar />
-          <ProductFilter longCat={longCat} />
-        </SearchBar.Container>
+        <GlobalContainer padding="6.25em 7.81em 4.4em 7.81em">
+          <SearchBar.Container>
+            <SearchBar />
+            <ProductFilter longCat={longCat} />
+          </SearchBar.Container>
 
-        <ProductCard.InfoBar>
-          <ProductCard.CategoryName>{`"${keyword}" အတွက်ရှာဖွေမှူရလဒ်များ`}</ProductCard.CategoryName>
-          <ProductCard.Count>
-            ရလဒ်ပေါင်း{" "}
-            <span className="mm-number">{changeMyanNum(medicines.length)}</span>
-          </ProductCard.Count>
-        </ProductCard.InfoBar>
-      </GlobalContainer>
+          <ProductCard.InfoBar>
+            <ProductCard.CategoryName>{`"${keyword}" Search results for`}</ProductCard.CategoryName>
+            <ProductCard.Count>
+              Total results{" "}
+              <span className="mm-number">{changeMyanNum(medicines.length)}</span>
+            </ProductCard.Count>
+          </ProductCard.InfoBar>
+        </GlobalContainer>
 
-      {medicines.length > 0 ? (
-        <ProductCardContainer medicines={medicines} />
-      ) : (
-        <Empty message={`"${keyword}"  နဲ့ပတ်သတ်သောဆေးရှာမတွေ့ပါ။`}>
-          <ul
-            style={{
-              padding: "0.7em 0 0.7em 1em",
-            }}
-          >
-            <li
-              style={{
-                margin: "0.3em 0",
-              }}
-            >
-              စာလုံးပေါင်းမှန်မမှန် ပြန်စစ်ကြည့်ပေးပါ။
-            </li>
-            <li
-              style={{
-                margin: "0.3em 0",
-              }}
-            >
-              <strong>&quot;စစ်ထုတ်မယ်&quot;</strong> ခလုတ်ကိုနှိပ်ပြီးတော့လဲ
-              ဆေးများကို ရောဂါအလိုက်ဖြစ်စေ၊ အစ စာလုံးဖြင့်ဖြစ်စေ
-              ရှာကြည့်နိုင်ပါတယ်။
-            </li>
-            <li
-              style={{
-                margin: "0.3em 0",
-              }}
-            >
-              မီနျူးတွင်ရှိသော <strong>&quot;ဆေးမျိုးစုံ&quot;</strong>{" "}
-              လင့်ကိုလဲ ပြန်သွားကြည့်နိုင်ပါတယ်။
-            </li>
-          </ul>
-        </Empty>
-      )}
-    </>
+        {medicines.length > 0 ? (
+            <ProductCardContainer medicines={medicines} />
+        ) : (
+            <Empty message={`"${keyword}"  No medicine found.`}>
+              <ul
+                  style={{
+                    padding: "0.7em 0 0.7em 1em",
+                  }}
+              >
+                <li
+                    style={{
+                      margin: "0.3em 0",
+                    }}
+                >
+                  Please check the correct spelling.
+                </li>
+                <li
+                    style={{
+                      margin: "0.3em 0",
+                    }}
+                >
+                  <strong>&quot;I will filter&quot;</strong> After pressing the button?
+                  Medicines according to disease or Either with the beginning letter
+                  You can search.
+                </li>
+                <li
+                    style={{
+                      margin: "0.3em 0",
+                    }}
+                >
+                  in the menu <strong>&quot;Medicine family&quot;</strong>{" "}
+                  You can go back to the link.
+                </li>
+              </ul>
+            </Empty>
+        )}
+      </>
   );
 }
 
@@ -98,13 +97,20 @@ export async function getServerSideProps({ query: { keyword } }) {
     },
   });
 
-  const resp = await fetch(`${API_URL}/medicines?${queryString}`);
-  const medicines = await resp.json();
+  try {
+    const resp = await fetch(`${API_URL}/medicines?${queryString}`);
+    const medicines = await resp.json();
 
-  const categoriesResp = await fetch(`${API_URL}/categories`);
-  const longCat = await categoriesResp.json();
+    const categoriesResp = await fetch(`${API_URL}/categories`);
+    const longCat = await categoriesResp.json();
 
-  return {
-    props: { keyword, medicines, longCat },
-  };
+    return {
+      props: { keyword, medicines, longCat },
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: { keyword, medicines: [], longCat: [] },
+    };
+  }
 }

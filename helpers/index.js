@@ -3,7 +3,7 @@ import myanmarNumbers from 'myanmar-numbers'
 export const changeMyanNum = num => myanmarNumbers(num, 'my')
 
 export const getEmailTemplate = data => {
-  const { medicines, name, phone, address, delivery_method, payment_method, kpay_screenshot } = data
+  const { medicines, name, phone, address, delivery_method, payment_method, Bizum_screenshot } = data
   const totalPrice = medicines.reduce((acc, medicine) => acc + medicine.price, 0)
   const GrandTotal = totalPrice + 1500
 
@@ -107,13 +107,13 @@ export const getEmailTemplate = data => {
           max-width: 200px;
         }
       }
-      .kpay-screenshot {
+      .Bizum-screenshot {
         max-width: 360px;
         margin: 0 auto;
         border-radius: 4px;
       }
       @media screen and (max-width: 465px) {
-        .kpay-screenshot {
+        .Bizum-screenshot {
           max-width: 100%;
         }
       }
@@ -125,34 +125,34 @@ export const getEmailTemplate = data => {
         <tr>
           <td colspan="3" style="text-align: center">
             <img
-              src="https://res.cloudinary.com/kyawsanhtoo-pharmacy/image/upload/v1638889000/Main_Logo_Landscape_c3fa172b30.png"
-              alt="Kyaw San Htoo Logo"
+              src="/logos/pharmacie-logo.png"
+              alt="Pharmacie Logo"
             />
           </td>
         </tr>
         <tr>
           <td colspan="3">
-            <h1 style="margin: 40px 0 24px 0">မှာယူသူရဲ့ အချက်အလက်များ</h1>
+            <h1 style="margin: 40px 0 24px 0">Customer information</h1>
           </td>
         </tr>
         <tr>
           <td style="width: 25%">
             <div style="margin-bottom: 24px">
-              <h2 style="margin-bottom: 8px">မှာယူသူ အမည်</h2>
+              <h2 style="margin-bottom: 8px">Customer name</h2>
               <p>${name}</p>
             </div>
           </td>
           <td style="width: 31%">
             <div style="margin-bottom: 24px">
-              <h2 style="margin-bottom: 8px">ပို့ဆောင်ပေးမည့် နည်းလမ်း</h2>
+              <h2 style="margin-bottom: 8px">ပThe method that will be provided</h2>
               <p>${delivery_method}</p>
             </div>
           </td>
 
               <td style='width: 33%'>
                 <div style='margin-bottom: 24px'>
-                  <h2 style='margin-bottom: 8px'>လိပ်စာ</h2>
-                  <p>${delivery_method === 'အိမ်အရောက်ပို့ပေးပါ' ? address : '-'}</p>
+                  <h2 style='margin-bottom: 8px'>Address</h2>
+                  <p>${delivery_method === 'Home delivery' ? address : '-'}</p>
                 </div>
               </td>
           
@@ -161,13 +161,13 @@ export const getEmailTemplate = data => {
         <tr>
           <td>
             <div>
-              <h2 style="margin-bottom: 8px">ဖုန်းနံပါတ်</h2>
+              <h2 style="margin-bottom: 8px">Phone number</h2>
               <p>${phone}</p>
             </div>
           </td>
           <td>
             <div>
-              <h2 style="margin-bottom: 8px">ငွေပေးချေမည့် နည်းလမ်း</h2>
+              <h2 style="margin-bottom: 8px">ငPayment method</h2>
               <p>${payment_method}</p>
             </div>
           </td>
@@ -179,15 +179,15 @@ export const getEmailTemplate = data => {
       <tbody>
         <tr>
           <td colspan="5">
-            <h1 style="margin-bottom: 24px">ကုန်ကျငွေ စာရင်း</h1>
+            <h1 style="margin-bottom: 24px">Cost list</h1>
           </td>
         </tr>
         <tr>
-          <td style="width: 20%">ဆေးပုံ</td>
-          <td style="width: 20%">ဝယ်မယ့်ဆေး</td>
-          <td style="width: 20%">ဈေးနှုန်း</td>
-          <td style="width: 20%">ပမာဏ</td>
-          <td style="width: 20%">ကျသင့်ငွေ<br />(ကျပ်)</td>
+          <td style="width: 20%">Medicine picture</td>
+          <td style="width: 20%">Medicine to buy</td>
+          <td style="width: 20%">Price</td>
+          <td style="width: 20%">Amount</td>
+          <td style="width: 20%">Charge<br />Euro</td>
         </tr>
         <tr style="height: 16px"></tr>
       </tbody>
@@ -203,16 +203,16 @@ export const getEmailTemplate = data => {
       <tbody>
         <tr style="height: 32px"></tr>
         <tr>
-          <td colspan="2">ပို့ဆောင်ခ
+          <td colspan="2">Shipping fee
           </td>
           <td style="width: 20%">${
-            delivery_method === 'အိမ်အရောက်ပို့ပေးပါ' ? changeMyanNum(1500) : changeMyanNum(0)
+            delivery_method === 'Home delivery' ? changeMyanNum(1500) : changeMyanNum(0)
           }</td>
         </tr>
         <tr style="height: 24px"></tr>
         <tr style="border-bottom: 1pt solid #b6e2db">
           <td colspan="2">
-            <p style="margin-bottom: 24px">စုစုပေါင်း ဆေးတန်ဖိုး</p>
+            <p style="margin-bottom: 24px">Total drug value</p>
           </td>
           <td style="width: 20%"><p style="margin-bottom: 24px">${changeMyanNum(totalPrice)}</p></td>
         </tr>
@@ -223,9 +223,9 @@ export const getEmailTemplate = data => {
     <table align="right" style="width: 60%; border-collapse: collapse">
       <tbody>
         <tr>
-          <td colspan="2" style="font-weight: bold">စုစုပေါင်း ကုန်ကျငွေ</td>
+          <td colspan="2" style="font-weight: bold">Total cost</td>
           <td style="width: 20%; font-weight: bold; font-size: 18px; color: #5abeae">${
-            delivery_method === 'အိမ်အရောက်ပို့ပေးပါ' ? changeMyanNum(GrandTotal) : changeMyanNum(totalPrice)
+            delivery_method === 'Home delivery' ? changeMyanNum(GrandTotal) : changeMyanNum(totalPrice)
           }</td>
         </tr>
       </tbody>
@@ -236,13 +236,13 @@ export const getEmailTemplate = data => {
             <tr>
               <td colspan='5'>
                 <h1 style='margin-bottom: 24px; margin-top: 40px; text-align: right'>${
-                  kpay_screenshot ? 'Ngwe Phyet Pine' : '-'
+                  Bizum_screenshot ? 'The screenshot' : '-'
                 }</h1>
               </td>
             </tr>
             <tr>
               <td style='text-align: right'>
-               <img src='cid:kpay_screenshot' alt='' class='kpay-screenshot' />
+               <img src='cid:Bizum_screenshot' alt='' class='Bizum-screenshot' />
               </td>
             </tr>
           </tbody>
@@ -252,7 +252,7 @@ export const getEmailTemplate = data => {
       <tbody>
         <tr>
           <td>
-            <p class="notice">အချက်အလက် တစ်စုံတစ်ရာမှားယွင်းမှုများရှိပါက ၀၉ ၁၂၃ ၄၅၆ ၇၈၉ ကို ဆက်သွယ်နိုင်ပါတယ်။</p>
+            <p class="notice">If there are any errors in the information, you can contact 123456789.</p>
           </td>
         </tr>
       </tbody>

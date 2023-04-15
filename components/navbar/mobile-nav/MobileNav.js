@@ -41,7 +41,7 @@ export default function MobileNav({ isMobileNavOpen, setIsMobileNavOpen }) {
   return (
     <Container key='logo_wrapper' initial='hidden' animate='visible' exit='exit' variants={logo_wrapper}>
       <LogoWrapper variants={links} key='logo_wrapper'>
-        <Image src='/logos/kyaw-san-htoo-logo-landscape.svg' layout='fill' alt='kyaw-san-htoo-logo' />
+        <Image src='/logos/pharmacie-logo.png' layout='fill' alt='pharmacie-logo' />
       </LogoWrapper>
       <NavLinkWrapper>
         {navLinks.map(link => (

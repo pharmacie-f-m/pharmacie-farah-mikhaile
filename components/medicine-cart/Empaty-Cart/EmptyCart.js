@@ -34,16 +34,16 @@ function EmptyCart() {
             />
           </svg>
           <CartTitle>
-            <span className='text'>ဆေးဝယ်စာရင်း</span>
+            <span className='text'>Drug Shopping List</span>
           </CartTitle>
         </CartHeading>
         <ImageWrapper>
-          <Image src='/illustrations/cartempty.svg' layout='fill' alt='' />
+          <Image src='/illustrations/cartempty.png' layout='fill' alt='' />
         </ImageWrapper>
       </EmptyCartWrapper>
       <ButtonWrapper onClick={reDirect}>
         <Button Big>
-          <span>ဆေးမျိုးစုံပေ့ခ်ျကိုသွားမယ်</span>
+          <span>Go to the Medicines Page</span>
         </Button>
       </ButtonWrapper>
     </>

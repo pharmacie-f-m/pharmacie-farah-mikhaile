@@ -11,38 +11,38 @@ export default function MinimalFooter() {
           <Group>
             <Link href='/' passHref>
               <MiniLogo>
-                <Image src='/logos/kyaw-san-htoo-logo-mini.svg' layout='fill' alt='kyaw-san-htoo-logo' />
+                <Image src='/logos/pharmacie-logo.png' layout='fill' alt='pharmacie-logo' />
               </MiniLogo>
             </Link>
           </Group>
           <Group>
-            <InfoText small>ကျော်စံထူး မူပိုင်ခွင့်/ {changeMyanNum(new Date().getFullYear())}ခုနှစ် </InfoText>
+            <InfoText small>Copyright/ {changeMyanNum(new Date().getFullYear())} </InfoText>
           </Group>
           <Group>
             <InfoText small>
               Designed & Developed by{' '}
               <a
-                href='https://www.linkedin.com/in/aung-pyae-kyaw-2346aa16b/'
+                href='https://www.linkedin.com/in/farah-abuatiyeh-3b6a911b7/'
                 style={{ textDecoration: 'underline' }}
                 target='_blank'
                 rel='noreferrer'>
-                Aung Pyae
+                Farah Abuatiyeh
               </a>{' '}
               |{' '}
               <a
-                href='https://www.linkedin.com/in/yanaunghein/'
+                href='https://www.linkedin.com/in/mikhaile-collins/'
                 style={{ textDecoration: 'underline' }}
                 target='_blank'
                 rel='noreferrer'>
-                Yaung
+                Mikhaile Collins
               </a>{' '}
               |{' '}
               <a
-                href='https://www.linkedin.com/in/ye-min-htun-464622175/'
+                href='https://www.linkedin.com/pharmacie'
                 style={{ textDecoration: 'underline' }}
                 target='_blank'
                 rel='noreferrer'>
-                Yè Min
+                Pharmacie Linkedin
               </a>
             </InfoText>
           </Group>

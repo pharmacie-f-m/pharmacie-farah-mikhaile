@@ -7,14 +7,14 @@ export default function JumbotronContainer() {
   return (
     <Jumbotron.Section>
       <GlobalContainer>
-        <Jumbotron.Heading>ကျော်စံထူးဝက်ဆိုဒ် မှာဘာတွေလုပ်နိုင်မလဲ</Jumbotron.Heading>
+        <Jumbotron.Heading>What can you do on Pharmacie website?</Jumbotron.Heading>
         <Jumbotron.Frame>
           {jumbotronData.map(jumbotron => (
             <Jumbotron key={jumbotron.id} data={jumbotron} />
           ))}
           <Link href='/help' passHref>
             <Button>
-              <span>အသုံးပြုနည်း</span>
+              <span>How to use</span>
             </Button>
           </Link>
         </Jumbotron.Frame>

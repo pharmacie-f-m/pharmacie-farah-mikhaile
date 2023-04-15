@@ -2,56 +2,56 @@
   "categoryCardData": [
     {
       "id": 1,
-      "name": "ချောင်းဆိုးပျောက်ဆေးများ",
+      "name": "Cough medicines",
       "path": "chaung-soe-pyout-say",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"
     },
     {
       "id": 2,
-      "name": "ကိုဗစ်-၁၉ ဆက်စပ်ပစ္စည်းများ",
+      "name": "COVID-19",
       "path": "covid-19-say-myrr",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"
     },
     {
       "id": 3,
-      "name": "အားဆေးများ",
+      "name": "Drugs",
       "path": "arr-say",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"
     },
     {
       "id": 4,
-      "name": "နှလုံးရောဂါ ဆေးများ",
+      "name": "Heart Medications",
       "path": "heart",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"
     },
     {
       "id": 5,
-      "name": "အားဆေးများ",
+      "name": "Drugs",
       "path": "arr-say",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"
     },
     {
       "id": 6,
-      "name": "နှလုံးရောဂါ ဆေးများ",
+      "name": "Heart medications",
       "path": "heart",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"
     },
     {
       "id": 1,
-      "name": "ချောင်းဆိုးပျောက်ဆေးများ",
+      "name": "Antibiotics",
       "path": "chaung-soe-pyout-say",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"
     },
     {
       "id": 2,
-      "name": "ကိုဗစ်-၁၉ ဆက်စပ်ပစ္စည်းများ",
+      "name": "COVID-19",
       "path": "covid-19-say-myrr",
       "image": "/temp/category-placeholder.jpg",
       "altText": "blah blah"

@@ -9,7 +9,7 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact - Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title>Contact - Pharmacie </title>
       </Head>
       <AnimatePresence>{showOrderSuccessPopup && <OrderSuccessPopup />}</AnimatePresence>
       <Contact />

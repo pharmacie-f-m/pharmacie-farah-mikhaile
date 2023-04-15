@@ -17,30 +17,30 @@ function contact() {
     <ContactWrapper>
       <ContactImg>
         <Image
-          src="/images/map.svg"
+          src="/images/map.png"
           layout="fill"
-          alt="kyaw-san-htoo-pharmacy"
+          alt="Pharmacie-pharmacy"
         />
       </ContactImg>
       <ContactContent>
         <UpperContent>
           <Description>
-            ကျော်စံထူးဆေးဆိုင်တွင် ဆေးမျိုးစုံကို လက်လီ လက်ကား
-            ဝယ်ယူရရှိနိုင်ပါပြီ
+            Pharmacie - Pharmacy retails and wholesales various drugs
+            Available for Purchase
           </Description>
           <ContactTitle>
-            အောက်ပါ ဖုန်းနံပါတ်နဲ့ လိပ်စာ တွေကို ဆေးမှာယူချင်ရင်ဖြစ်စေ
-            သိချင်တာများ မေးချင်ရင်ဖြစ်စေ ခေါ်ဆိုနိုင်ပါတယ်
+            If you want to order medicine, please contact the following phone number and address
+            You can call if you want to ask anything you want to know
           </ContactTitle>
         </UpperContent>
         <LowerContent>
           <ContactDetail>
-            <a href="tel:04224747">၀၄၂ ၂၄၇၄၇</a>၊{" "}
-            <a href="tel:095021252">၀၉ ၅၀၂၁ ၂၅၂</a>
+            <a href="tel:1234567">1234567</a>၊{" "}
+            <a href="tel:123456789">123456789</a>
           </ContactDetail>
-          <ContactDetail>info@kyawsantoopharmacy.com</ContactDetail>
+          <ContactDetail>info@pharmacie.com</ContactDetail>
           <ContactDetail>
-            အမှတ် ကျူ/ဘီ၊ ပုသိမ်ဆေးရုံကြီးရှေ့၊ ပုသိမ်မြို့။
+            Paseo De Castellana 259E
           </ContactDetail>
           <SocialWrapper>
             <SocialIcon href="">

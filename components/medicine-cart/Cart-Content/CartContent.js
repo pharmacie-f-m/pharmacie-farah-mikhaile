@@ -37,7 +37,7 @@ function CartContent({ nextPage, medicineToBuy }) {
   }
 
   const changeToMM = qty => {
-    const myannums = ['၀', '၁', '၂', '၃', '၄', '၅', '၆', '၇', '၈', '၉']
+    const myannums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     const processnum = qty.toString()
     const spilitnum = processnum.split('')
     const newarray = spilitnum.map(num => {
@@ -68,7 +68,7 @@ function CartContent({ nextPage, medicineToBuy }) {
             />
           </svg>
           <CartTitle>
-            <span className='text'>ဆေးဝယ်စာရင်း</span>
+            <span className='text'>Drug Shopping List</span>
             <span className='number'>
               <span className='num'>{changeToMM(medicineToBuy.length)}</span>
             </span>
@@ -76,10 +76,10 @@ function CartContent({ nextPage, medicineToBuy }) {
         </CartHeading>
 
         <ItemTitleWrapper>
-          <ItemTitles>ဝယ်မယ့်ဆေး</ItemTitles>
-          <ItemTitles>ပမာဏ</ItemTitles>
+          <ItemTitles>Medicine to Buy</ItemTitles>
+          <ItemTitles>Amount</ItemTitles>
           <ItemTitles>
-            ကျသင့်ငွေ <br /> (ကျပ်)
+            Charges <br /> (qt)
           </ItemTitles>
         </ItemTitleWrapper>
 
@@ -131,7 +131,7 @@ function CartContent({ nextPage, medicineToBuy }) {
                         {parse(
                           `${name} <span className='mm-number'>${changeMyanNum(
                             product_quantity
-                          )}</span> ${product_unit} သာကျန်ပါတော့တယ်`
+                          )}</span> ${product_unit} Only Left`
                         )}
                       </Error>
                     )}
@@ -147,10 +147,10 @@ function CartContent({ nextPage, medicineToBuy }) {
                       <AiOutlineDelete
                         style={{ color: '#EE5C3C' }}
                         onClick={() => {
-                          const sure = confirm(`${name}ကို ဝယ်မယ့်စာရင်းထဲကဖယ်ချင်တာ သေချာပြီလား အချောလေး😌`)
+                          const sure = confirm(`${name}Are you sure you want to remove from list?`)
                           if (sure) {
                             dispatch({ type: 'deleteItem', payload: { id: id } })
-                            toast.success(`${name}ကို ဝယ်မယ့်စာရင်းထဲကဖယ်လိုက်ပါပြီ။😘`)
+                            toast.success(`${name}Removed`)
                           } else {
                             return
                           }
@@ -171,7 +171,7 @@ function CartContent({ nextPage, medicineToBuy }) {
 
       <ButtonWrapper>
         <Button Big onClick={nextPage} disabled={totalQty === 0 ? true : false}>
-          <span>ဆက်လုပ်ဆောင်မယ်</span>
+          <span>Continue</span>
         </Button>
       </ButtonWrapper>
     </>

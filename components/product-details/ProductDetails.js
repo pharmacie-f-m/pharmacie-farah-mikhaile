@@ -57,7 +57,7 @@ export default function ProductDetails({ medicine_info }) {
       <EnglishName>{product_name_eng}</EnglishName>
       <HorizontalGroup>
         <VerticleGroup>
-          <Label>ထုတ်လုပ်သည့် ကုမ္ပဏီ</Label>
+          <Label>Manufacturing company</Label>
         </VerticleGroup>
         <VerticleGroup>
           <Label>{product_company}</Label>
@@ -66,17 +66,17 @@ export default function ProductDetails({ medicine_info }) {
       </HorizontalGroup>
       <HorizontalGroup>
         <VerticleGroup>
-          <Label>ပမာဏ</Label>
+          <Label>Amount</Label>
           {product_quantity === 0 ? (
-            <NoticePill availability={false}>ပစ္စည်း ကုန်နေပါတယ်</NoticePill>
+            <NoticePill availability={false}>Out of stock</NoticePill>
           ) : (
             <Counter amount={amount} setAmount={setAmount} medicine={medicine_info} />
           )}
         </VerticleGroup>
         <VerticleGroup>
-          <Label>ကျသင့်ငွေ</Label>
+          <Label>Charge</Label>
           <InfoText>
-            <span className='mm-number'>{changeMyanNum(product_price * amount)}</span> ကျပ်
+            <span className='mm-number'>{changeMyanNum(product_price * amount)}</span> Euro
           </InfoText>
         </VerticleGroup>
       </HorizontalGroup>
@@ -86,7 +86,7 @@ export default function ProductDetails({ medicine_info }) {
             dispatch({ type: 'ADD_TO_CART', newItem })
             setCartVisible(true)
           }}>
-          <span>ဝယ်မယ့် စာရင်းထဲ ထည့်မယ်</span>
+          <span>Add to cart</span>
         </Button>
       ) : productToCompare ? (
         <Button
@@ -94,19 +94,19 @@ export default function ProductDetails({ medicine_info }) {
             e.preventDefault()
             router.push(`/compare?outstock=${slug}&instock=${product_to_compare[0].slug}`)
           }}>
-          <span>အနီးစပ်ဆုံးဆေးနဲ့ နှိုင်းယှဉ်မယ်</span>
+          <span>Compare to nearest drug</span>
         </Button>
       ) : (
         <>
           <Button disabled>
-            <span>ဝယ်မယ့် စာရင်းထဲ ထည့်မယ်</span>
+            <span>Add to card</span>
           </Button>
           <div style={{ marginTop: '1em', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span style={{ color: '#EE5C3C', transform: 'translateY(1rem)' }}>အာနိသင်တူဆေးများလဲ မရှိသေးပါ။ 😥</span>
+            <span style={{ color: '#EE5C3C', transform: 'translateY(1rem)' }}>No drugs with same effect yet</span>
             <Link href='/categories/all' passHref>
               <a style={{ cursor: 'pointer', display: 'flex' }}>
                 <Chevron direction='left' style={{ transform: 'translateY(0)' }} />
-                <span style={{ transform: 'translateY(1rem)' }}>ဆေးမျိုးစုံပေ့ခ်ျသို့ပြန်သွားမယ်</span>
+                <span style={{ transform: 'translateY(1rem)' }}>Return to drugs page</span>
               </a>
             </Link>
           </div>

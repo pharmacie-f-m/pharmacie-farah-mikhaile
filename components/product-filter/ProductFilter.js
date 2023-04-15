@@ -75,7 +75,7 @@ export default function ProductFilter({ longCat, routerChar, routerCat }) {
             background: isFilterOpen && '#5ABEAE',
             borderColor: isFilterOpen && '#5ABEAE',
           }}>
-          <span>စစ်ထုတ်မယ်</span>
+          <span>Filter</span>
         </Button.OffWhite>
         <AnimatePresence>
           {isFilterOpen && (
@@ -124,7 +124,7 @@ export default function ProductFilter({ longCat, routerChar, routerCat }) {
                   },
                 }}>
                 <TitleWrapper>
-                  <Title>ရောဂါများ</Title>
+                  <Title>Diseases</Title>
                 </TitleWrapper>
                 <Body>
                   {longCat.map(cat => (
@@ -163,7 +163,7 @@ export default function ProductFilter({ longCat, routerChar, routerCat }) {
                   },
                 }}>
                 <TitleWrapper>
-                  <Title>အစ စာလုံးများ</Title>
+                  <Title>Initial letters</Title>
                 </TitleWrapper>
                 <Body>
                   {Alphabets.map(char => (

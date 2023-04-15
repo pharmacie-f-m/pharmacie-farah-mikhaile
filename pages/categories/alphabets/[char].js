@@ -28,7 +28,7 @@ export default function CharacterPage({
   return (
     <>
       <Head>
-        <title>{`"${char}"`} - Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title>{`"${char}"`} - Pharmacie - Pharmacy in Spain</title>
       </Head>
       <AnimatePresence>
         {showOrderSuccessPopup && <OrderSuccessPopup />}
@@ -41,9 +41,9 @@ export default function CharacterPage({
         </SearchBar.Container>
 
         <ProductCard.InfoBar>
-          <ProductCard.CategoryName>{`အက္ခရာ "${char}" နဲ့စသော ဆေးများ`}</ProductCard.CategoryName>
+          <ProductCard.CategoryName>{`Medicine that starts with "${char}" `}</ProductCard.CategoryName>
           <ProductCard.Count>
-            ရလဒ်ပေါင်း <span className="mm-number">{changeMyanNum(count)}</span>
+            Results: <span className="mm-number">{changeMyanNum(count)}</span>
           </ProductCard.Count>
         </ProductCard.InfoBar>
       </GlobalContainer>
@@ -51,7 +51,7 @@ export default function CharacterPage({
       {filteredMedicines.length > 0 ? (
         <ProductCardContainer medicines={filteredMedicines} />
       ) : (
-        <Empty message={`"${char}" နဲ့စသော ဆေးများမရှိသေးပါ။`} />
+        <Empty message={`"${char}" There are no drugs yet`} />
       )}
     </>
   );
@@ -72,21 +72,34 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { char } }) {
-  const resp = await fetch(`${API_URL}/medicines`);
-  const medicines = await resp.json();
-  const filteredMedicines = medicines.filter(
-    (medicine) => medicine.product_name_eng.split("")[0].toLowerCase() === char
-  );
-  const respCat = await fetch(`${API_URL}/categories`);
-  const longCat = await respCat.json();
+  try {
+    const resp = await fetch(`${API_URL}/medicines`);
+    const medicines = await resp.json();
+    const filteredMedicines = medicines.filter(
+        (medicine) => medicine.product_name_eng.split("")[0].toLowerCase() === char
+    );
+    const respCat = await fetch(`${API_URL}/categories`);
+    const longCat = await respCat.json();
 
-  return {
-    props: {
-      filteredMedicines,
-      count: filteredMedicines.length,
-      char,
-      longCat,
-    },
-    revalidate: 5,
-  };
+    return {
+      props: {
+        filteredMedicines,
+        count: filteredMedicines.length,
+        char,
+        longCat,
+      },
+      revalidate: 5,
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        filteredMedicines: [],
+        count: 0,
+        char,
+        longCat: [],
+      },
+      revalidate: 5,
+    };
+  }
 }

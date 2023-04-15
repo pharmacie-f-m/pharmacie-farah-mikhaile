@@ -8,29 +8,36 @@ import { useContext } from 'react'
 import { CartStates } from '@/ksh-contexts/Cart-Context'
 import { AnimatePresence } from 'framer-motion'
 
-export default function HomePage({ testimonials, categories }) {
-  const { showOrderSuccessPopup } = useContext(CartStates)
-  return (
-    <>
-      <AnimatePresence>{showOrderSuccessPopup && <OrderSuccessPopup />}</AnimatePresence>
-      <BannerContainer />
-      <CategoryCardContainer categories={categories} />
-      <JumbotronContainer />
-      <TestimonialContainer testimonials={testimonials} />
-      <CtaSection />
-    </>
-  )
+export default function HomePage({ testimonials = [], categories = [] }) {
+    const { showOrderSuccessPopup } = useContext(CartStates)
+    return (
+        <>
+            <AnimatePresence>{showOrderSuccessPopup && <OrderSuccessPopup />}</AnimatePresence>
+            <BannerContainer />
+            <CategoryCardContainer categories={categories} />
+            <JumbotronContainer />
+            <TestimonialContainer testimonials={testimonials} />
+            <CtaSection />
+        </>
+    )
 }
 
 export async function getStaticProps() {
-  const testimonialsResp = await fetch(`${API_URL}/testimonials`)
-  const testimonials = await testimonialsResp.json()
+    let testimonials = []
+    let categories = []
 
-  const categoriesResp = await fetch(`${API_URL}/categories`)
-  const categories = await categoriesResp.json()
+    try {
+        const testimonialsResp = await fetch(`${API_URL}/testimonials`)
+        testimonials = await testimonialsResp.json()
 
-  return {
-    props: { testimonials, categories },
-    revalidate: 1,
-  }
+        const categoriesResp = await fetch(`${API_URL}/categories`)
+        categories = await categoriesResp.json()
+    } catch (error) {
+        console.error(error)
+    }
+
+    return {
+        props: { testimonials, categories },
+        revalidate: 1,
+    }
 }

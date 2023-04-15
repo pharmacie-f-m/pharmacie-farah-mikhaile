@@ -57,14 +57,14 @@ export default function OrderSuccessPopup() {
             />
           </svg>
         </IconWrapper>
-        <Heading>အော်ဒါတင်ပြီးပါပြီ</Heading>
-        <ListTitle>သတိပြုရန်များ</ListTitle>
+        <Heading>Order has been placed</Heading>
+        <ListTitle>Warnings</ListTitle>
         <List>
-          <li>ဆိုင်လာယူမယ်ဆိုရင် မနက် ၉ နာရီ မှ ညနေ ၉ နာရီ အတွင်း လာယူနိုင်ပါတယ်။</li>
-          <li>အိမ်အရောက်ပို့ အော်ဒါများကို ၅ နာရီအတွင်း ပို့ပေးမှာဖြစ်ပါတယ်။</li>
+          <li>If you pick it up, you can pick it up between 9:00 AM and 9:00 PM</li>
+          <li>Home delivery orders will be delivered within 5 hours</li>
         </List>
         <Button onClick={() => setShowOrderSuccessPopup(false)}>
-          <span>ပိတ်မယ်</span>
+          <span>Close</span>
         </Button>
       </Popup>
     </Container>

@@ -54,23 +54,23 @@ export default function ProductCard({ medicine }) {
           <MyanmarName>{product_name_mm}</MyanmarName>
           <Group>
             <EnglishName>{product_name_eng}</EnglishName>
-            <NoticePill availability={isAvailable}>{isAvailable ? 'ပစ္စည်းရှိ' : 'ပစ္စည်းကုန်'}</NoticePill>
+            <NoticePill availability={isAvailable}>{isAvailable ? 'Available' : 'Out of stock'}</NoticePill>
           </Group>
           <Group>
             <PriceWrapper>
               <Price>
-                <span>{changeMyanNum(product_price)}</span> ကျပ်/ <span>၁</span> {product_unit}
+                <span>{changeMyanNum(product_price)}</span> Euro/ <span>၁</span> {product_unit}
               </Price>
               {product_previous_price && (
                 <PreviousPrice>
-                  <span>{changeMyanNum(product_previous_price)}</span> ကျပ်
+                  <span>{changeMyanNum(product_previous_price)}</span> Euro
                 </PreviousPrice>
               )}
             </PriceWrapper>
           </Group>
         </Content>
         <Link href={`/categories/${categories[0].slug}/${slug}`} passHref>
-          <Button>အသေးစိတ် ကြည့်မယ်</Button>
+          <Button>View Details</Button>
         </Link>
       </ContentWrapper>
     </Item>

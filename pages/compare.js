@@ -57,7 +57,7 @@ export default function ComparePage({ isInjected = false, outstockMedicine, inst
   return (
     <>
       <Head>
-        <title>Compare - Kyaw San Htoo - Pharmacy in Pathein</title>
+        <title>Compare - Pharmacie - Pharmacy in Spain</title>
       </Head>
       <AnimatePresence>{showOrderSuccessPopup && <OrderSuccessPopup />}</AnimatePresence>
       <Compare.Section>

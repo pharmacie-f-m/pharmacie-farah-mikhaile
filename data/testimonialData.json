@@ -2,33 +2,33 @@
   "testimonialData": [
     {
       "id": 1,
-      "text": "ဒီဆိုင်လေး အရမ်းကောင်းပါတယ် ဆေးတွေလည်း အစုံရှိတယ် ဆိုင်ရှင်ကလဲ သဘောကောင်းတယ်",
-      "customer": "ရန်အောင်ဟိန်း",
-      "what": "ဒပလုတ်ပါ"
+      "text": "This pharmacy is very good. There are a lot of medicines. The owners are kind",
+      "customer": "Anna",
+      "what": "Download"
     },
     {
       "id": 2,
-      "text": "ဒီဆိုင်လေး အရမ်းကောင်းပါတယ် ဆေးတွေလည်း အစုံရှိတယ် ဆိုင်ရှင်ကလဲ သဘောကောင်းတယ်",
-      "customer": "ရန်အောင်ဟိန်း",
-      "what": "ဒပလုတ်ပါ"
+      "text": "Amazing shop",
+      "customer": "Nicole",
+      "what": "Download"
     },
     {
       "id": 3,
-      "text": "ဒီဆိုင်လေး အရမ်းကောင်းပါတယ် ဆေးတွေလည်း အစုံရှိတယ် ဆိုင်ရှင်ကလဲ သဘောကောင်းတယ်",
-      "customer": "ရန်အောင်ဟိန်း",
-      "what": "ဒပလုတ်ပါ"
+      "text": "Great service",
+      "customer": "Katrina",
+      "what": "Download"
     },
     {
       "id": 4,
-      "text": "ဒီဆိုင်လေး အရမ်းကောင်းပါတယ် ဆေးတွေလည်း အစုံရှိတယ် ဆိုင်ရှင်ကလဲ သဘောကောင်းတယ်",
-      "customer": "ရန်အောင်ဟိန်း",
-      "what": "ဒပလုတ်ပါ"
+      "text": "Fast",
+      "customer": "Sofia",
+      "what": "Download"
     },
     {
       "id": 5,
-      "text": "ဒီဆိုင်လေး အရမ်းကောင်းပါတယ် ဆေးတွေလည်း အစုံရှိတယ် ဆိုင်ရှင်ကလဲ သဘောကောင်းတယ်",
-      "customer": "ရန်အောင်ဟိန်း",
-      "what": "ဒပလုတ်ပါ"
+      "text": "Efficient",
+      "customer": "Carla",
+      "what": "Download"
     }
   ]
 }
