@@ -1,28 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Section, Heading, Frame, Item, ImageWrapper, ContentWrapper, CategoryName } from './CategoryCard-styles'
+import { Section, Heading, Frame, Item, ImageWrapper, ContentWrapper } from './CategoryCard-styles'
 
 export default function CategoryCard({ category }) {
-  const { category_name_eng, category_name_long, slug, category_image } = category
+  const categoryId = category.categoryId;
+  const categoryName = category.categoryName;
 
   return (
-    <Link href={`/categories/${slug}`} passHref>
-      <Item>
-        <ImageWrapper>
-          {/* not sure bluring image works or not, just test */}
-          <Image
-            src={category_image.url}
-            layout='fill'
-            alt={`${category_name_eng} - ${category_name_long}`}
-            placeholder='blur'
-            blurDataURL={category_image.hash}
-          />
-        </ImageWrapper>
-        <ContentWrapper>
-          <CategoryName>{category_name_long}</CategoryName>
-        </ContentWrapper>
-      </Item>
-    </Link>
+      <>
+      <div id={"category-slide-link-wrapper"}>
+        <Link href={`/categories/${categoryId}`} passHref>
+          <h3 className={"center-text category-slide-link"}>{categoryName}</h3>
+        </Link>
+      </div>
+    </>
   )
 }
 

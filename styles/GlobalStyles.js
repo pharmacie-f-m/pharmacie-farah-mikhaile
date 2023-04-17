@@ -1,7 +1,13 @@
 import styled from 'styled-components'
 import { createGlobalStyle, css } from 'styled-components'
 
+
 export const GlobalContainer = styled.div`
+  
+  :root{
+    --lightteal: rgb(90, 190, 174);
+  }
+  
   height: 100%;
   padding: ${({ padding }) => padding || '6.25em 7.81em'};
 
@@ -27,12 +33,12 @@ export const GlobalStyles = createGlobalStyle`${css`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.dividerOne};
-    
+    background: ${({theme}) => theme.colors.dividerOne};
+
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${({ theme }) => theme.colors.heading};
+    background: ${({theme}) => theme.colors.heading};
   }
 
   * {
@@ -42,23 +48,24 @@ export const GlobalStyles = createGlobalStyle`${css`
   }
 
   ::selection {
-    color: ${({ theme }) => theme.colors.heading};
-    background-color: ${({ theme }) => theme.colors.text};
+    color: ${({theme}) => theme.colors.heading};
+    background-color: ${({theme}) => theme.colors.text};
   }
 
   html,
   body {
     font-family: Bahnschrift, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-      Droid Sans, Helvetica Neue, sans-serif;
-      -webkit-tap-highlight-color: rgba(0,0,0,0.01);
+    Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.01);
   }
 
   body {
     font-size: 1vw;
     line-height: 1.8;
-    color: ${({ theme }) => theme.colors.text};
-    background-color: ${({ theme }) => theme.colors.bodyBg};
+    color: ${({theme}) => theme.colors.text};
+    background-color: ${({theme}) => theme.colors.bodyBg};
   }
+
   @media screen and (max-width: 1200px) {
     body {
       font-size: 13px;
@@ -71,15 +78,15 @@ export const GlobalStyles = createGlobalStyle`${css`
   }
 
   input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+  input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
+  }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
-}
+  input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+  }
 
   h1,
   h2,
@@ -87,7 +94,7 @@ input[type=number] {
   h4,
   h5,
   h6 {
-    color: ${({ theme }) => theme.colors.heading};
+    color: ${({theme}) => theme.colors.heading};
     line-height: 1.6;
   }
 
@@ -108,6 +115,7 @@ input[type=number] {
   h3 {
     font-size: 1.72em;
   }
+
   @media screen and (max-width: 500px) {
     h3 {
       font-size: 1.41em;
@@ -130,51 +138,66 @@ input[type=number] {
     max-width: 100%;
     object-fit: cover;
   }
-
   
+  .center-text{
+    text-align: center;
+  }
+
+  #category-slide-link-wrapper{
+    padding: 20px;
+  }
+
+  .category-slide-link {
+    background-color: rgb(198, 255, 243);
+    border-radius: 20px;
+    padding: 20px;
+  }
+
   .mm-number {
     font-size: 1.2em;
   }
 
   .slick-dots {
     /* transform: translateY(40px); */
-    bottom : -50px;
+    bottom: -50px;
     display: flex !important;
-    justify-content : center;
-    align-item : center;
+    justify-content: center;
+    align-item: center;
   }
 
-  .slick-dots li{
-    background-color : ${({ theme }) => theme.colors.testimonial};
-    width : 0.8em !important;
-    height : 0.8em !important;
-    border-radius : 100vh;
+  .slick-dots li {
+    background-color: ${({theme}) => theme.colors.testimonial};
+    width: 0.8em !important;
+    height: 0.8em !important;
+    border-radius: 100vh;
     transition: 0.5s all ease-out;
   }
 
-  .slick-dots li.slick-active{
-    background-color : ${({ theme }) => theme.colors.heading};
-    width : 2em !important;
-    height : 0.8em !important;
-    border-radius : 100vh;
+  .slick-dots li.slick-active {
+    background-color: ${({theme}) => theme.colors.heading};
+    width: 2em !important;
+    height: 0.8em !important;
+    border-radius: 100vh;
   }
 
-  .slick-dots li button:before{
-      content : ''
+  .slick-dots li button:before {
+    content: ''
   }
 
-  .slick-prev::before, .slick-next::before{
-    color : ${({ theme }) => theme.colors.heading};
+  .slick-prev::before, .slick-next::before {
+    color: ${({theme}) => theme.colors.heading};
   }
 
   #nprogress .bar {
-    background: ${({ theme }) => theme.colors.heading}; !important;
+    background: ${({theme}) => theme.colors.heading};
+  !important;
     height: 3px !important;
   }
 
   #nprogress .peg {
-    box-shadow: 0 0 10px ${({ theme }) => theme.colors.heading};, 0 0 5px ${({ theme }) =>
-  theme.colors.heading}; !important;
+    box-shadow: 0 0 10px ${({theme}) => theme.colors.heading};, 0 0 5 px ${({theme}) =>
+          theme.colors.heading};
+  !important;
   }
 `}  
 `

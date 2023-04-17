@@ -56,9 +56,3 @@ export const ContentWrapper = styled.div`
   width: 20em;
   padding-bottom: 1.2em;
 `
-
-export const CategoryName = styled.h3`
-  color: ${({ theme }) => theme.colors.bodyBg};
-  text-align: center;
-  font-size: 1.2em;
-`
