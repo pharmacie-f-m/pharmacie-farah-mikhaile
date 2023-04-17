@@ -5,7 +5,7 @@ import { ProductCard, SearchBar, ProductFilter, OrderSuccessPopup, Empty } from 
 import { GlobalContainer } from '@/ksh-styles/GlobalStyles'
 import { API_URL } from '@/ksh-config/index'
 import { changeMyanNum } from '@/ksh-helpers'
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { CartStates } from '@/ksh-contexts/Cart-Context'
 import { AnimatePresence } from 'framer-motion'
 
@@ -36,7 +36,7 @@ export default function AllMedicinePage({ medicines, count, category, longCat })
         {medicines && medicines.length > 0 ? (
             <ProductCardContainer medicines={medicines} />
         ) : (
-            <Empty message={`${category} မရှိသေးပါ။`} />
+            <Empty message={`${category} Nothing`} />
         )}
       </>
   )

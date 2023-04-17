@@ -9,7 +9,7 @@ export default function CategoryCard({ category }) {
   return (
       <>
       <div id={"category-slide-link-wrapper"}>
-        <Link href={`/categories/${categoryId}`} passHref>
+        <Link href={`/category/${categoryId}`} passHref>
           <h3 className={"center-text category-slide-link"}>{categoryName}</h3>
         </Link>
       </div>

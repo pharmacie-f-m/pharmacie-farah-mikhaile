@@ -100,7 +100,7 @@ const Banner = () => {
                   </Link>
                 ))}
               </PillWrapper>
-              <Link href='/categories/all' passHref>
+              <Link href='/category/1' passHref>
                 <ViewAll>View Drugs</ViewAll>
               </Link>
             </DropdownData>

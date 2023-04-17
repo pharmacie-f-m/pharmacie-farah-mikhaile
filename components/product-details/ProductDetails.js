@@ -103,7 +103,7 @@ export default function ProductDetails({ medicine_info }) {
           </Button>
           <div style={{ marginTop: '1em', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <span style={{ color: '#EE5C3C', transform: 'translateY(1rem)' }}>No drugs with same effect yet</span>
-            <Link href='/categories/all' passHref>
+            <Link href='/category/1' passHref>
               <a style={{ cursor: 'pointer', display: 'flex' }}>
                 <Chevron direction='left' style={{ transform: 'translateY(0)' }} />
                 <span style={{ transform: 'translateY(1rem)' }}>Return to drugs page</span>

@@ -13,7 +13,7 @@ function EmptyCart() {
   }
 
   const reDirect = () => {
-    Router.push('/categories/all')
+    Router.push('/category/1')
     setCartVisible(false)
   }
 

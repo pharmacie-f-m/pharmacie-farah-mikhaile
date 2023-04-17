@@ -54,7 +54,7 @@ export default function Footer() {
             </Link>
           </Group>
           <Group>
-            <InfoText small>Pharmacie copyright/ {changeMyanNum(new Date().getFullYear())} </InfoText>
+            <InfoText small>PharmacIE </InfoText>
           </Group>
           <Group>
             <InfoText small>

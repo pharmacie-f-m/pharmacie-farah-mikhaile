@@ -4,12 +4,12 @@ module.exports = {
     return [
       {
         source: '/categories',
-        destination: '/categories/all',
+        destination: '/category/1',
         permanent: true,
       },
       {
         source : '/categories/alphabets',
-        destination : '/categories/all',
+        destination : '/category/1',
         permanent : true,
       }
     ]

@@ -84,7 +84,7 @@ export default function ComparePage({ isInjected = false, outstockMedicine, inst
             ))}
             {/* {' this div is to group in one line'} */}
             <Compare.ButtonWrapper>
-              <Link href={`/categories/all`} passHref>
+              <Link href={`/category/1`} passHref>
                 <Button.White>ဆေးမျိုးစုံပေ့ခ်ျကိုပြန်သွားမယ်</Button.White>
               </Link>
               <Link href={`/categories/${instockMedicine.categories[0].slug}/${instockMedicine.slug}`} passHref>
