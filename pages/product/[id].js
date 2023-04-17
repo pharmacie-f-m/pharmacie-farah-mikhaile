@@ -38,8 +38,8 @@ export default function ProductsByCategory() {
                                     src={"/images/" + product.img_name}
                                     alt={product.productName}
                                     className={"center-image"}
-                                    height={"400"}
-                                    width={"400"}
+                                    height={"500"}
+                                    width={"500"}
                                 />
                             </div>
                             <div id={"product-flex-right"}>

@@ -16,7 +16,7 @@ export default function MinimalFooter() {
             </Link>
           </Group>
           <Group>
-            <InfoText small>Copyright/ {changeMyanNum(new Date().getFullYear())} </InfoText>
+            <InfoText small>Copyright</InfoText>
           </Group>
           <Group>
             <InfoText small>

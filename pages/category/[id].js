@@ -56,7 +56,7 @@ export default function ProductsByCategory() {
             <h1 className={"center-text"}>Medicine</h1><br/><br />
             <nav id={"products-nav-div"}>
                 {categoriesData.map(category => (
-                    <Link href={`/category/${category.categoryId}`} className={"products-nav-link"}>{category.categoryName}</Link>
+                    <Link href={`/category/${category.categoryId}`} passHref className={"products-nav-link"}>{category.categoryName}</Link>
                 ))}
             </nav>
             <br />
@@ -69,8 +69,8 @@ export default function ProductsByCategory() {
             <div id={"products-grid"}>
                 {productData.map(product => (
                     <div key={product.productId} className={"products-grid-item"}>
-                        <Link href={`/product/${product.productId}`} className={"center-text"}><h4>{product.productName}</h4></Link><br />
-                        <Link href={`/product/${product.productId}`}>
+                        <Link href={`/product/${product.productId}`} passHref className={"center-text"}><h4>{product.productName}</h4></Link><br />
+                        <Link href={`/product/${product.productId}`} passHref>
                             <Image
                                 src={"/images/" + product.img_name}
                                 alt={product.productName}

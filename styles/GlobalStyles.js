@@ -181,6 +181,13 @@ export const GlobalStyles = createGlobalStyle`${css`
     margin: 20px;
   }
 
+  #products-nav-div a:hover {
+    box-shadow: 2px 2px 5px rgb(150, 150, 150);
+    cursor: pointer;
+    transform: translateY(-5%);
+    transition: 0.5s;
+  }
+
   #products-grid {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -194,6 +201,14 @@ export const GlobalStyles = createGlobalStyle`${css`
     border-radius: 20px;
     box-shadow: 2px 2px 5px rgb(200, 200, 200);
   }
+
+  .products-grid-item:hover {
+    box-shadow: 2px 2px 5px rgb(150, 150, 150);
+    cursor: pointer;
+    transform: translateY(-5%);
+    transition: 0.5s;
+  }
+
 
   .product-grid-item-image {
     max-height: 80px;
